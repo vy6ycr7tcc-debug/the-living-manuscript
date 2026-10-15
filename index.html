@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>The Living Manuscript — An Illuminated Journey through the Deep Mind</title>
+  <title>The Living Manuscript — Polished Gold & Reflective Masterwork</title>
   <style>
     /* Reset & Base */
     *, *::before, *::after {
@@ -17,8 +17,8 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #050b16;
-      color: #f0e8d2;
+      background-color: #030712;
+      color: #f7eed7;
       font-family: "Cormorant Garamond", "Cinzel", "Georgia", "Times New Roman", serif;
     }
     #app-container {
@@ -28,7 +28,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 50% 50%, #0a1428 0%, #050b16 70%, #02050b 100%);
+      background: radial-gradient(circle at 50% 50%, #081122 0%, #030712 75%, #010308 100%);
     }
     canvas {
       position: absolute;
@@ -58,12 +58,12 @@
       min-height: 80px;
     }
     .vo-card {
-      font-size: clamp(1.15rem, 2.3vw, 1.8rem);
+      font-size: clamp(1.18rem, 2.3vw, 1.85rem);
       font-weight: 400;
       line-height: 1.55;
       letter-spacing: 0.05em;
-      color: #f0e8d2;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 24px rgba(232, 182, 76, 0.4);
+      color: #fcf4de;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 26px rgba(255, 233, 168, 0.45);
       opacity: 0;
       transform: translateY(8px);
       transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -90,17 +90,17 @@
     }
     #episode-badge {
       font-size: clamp(0.7rem, 1.2vw, 0.92rem);
-      letter-spacing: 0.3em;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: rgba(232, 182, 76, 0.75);
-      text-shadow: 0 0 12px rgba(232, 182, 76, 0.3);
+      color: rgba(255, 233, 168, 0.85);
+      text-shadow: 0 0 14px rgba(232, 182, 76, 0.4);
     }
     #shot-badge {
       font-size: clamp(0.85rem, 1.5vw, 1.15rem);
       font-style: italic;
       letter-spacing: 0.12em;
-      color: rgba(240, 232, 210, 0.88);
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      color: rgba(247, 238, 215, 0.92);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     }
 
     /* Floating UI Layer */
@@ -117,13 +117,13 @@
       gap: 8px;
       opacity: 0;
       transition: opacity 0.4s ease;
-      background: rgba(5, 11, 22, 0.78);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(3, 7, 18, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       padding: 10px 18px;
       border-radius: 20px;
-      border: 1px solid rgba(232, 182, 76, 0.25);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 16px rgba(232, 182, 76, 0.12);
+      border: 1px solid rgba(255, 233, 168, 0.35);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 20px rgba(232, 182, 76, 0.2);
     }
     #app-container:hover #ui-layer,
     #app-container.ui-active #ui-layer {
@@ -154,9 +154,9 @@
       top: 0;
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, #c5922e, #ffe9a8);
+      background: linear-gradient(90deg, #b8811f, #ffe9a8, #ffffff);
       border-radius: 2px;
-      box-shadow: 0 0 8px rgba(232, 182, 76, 0.8);
+      box-shadow: 0 0 10px rgba(255, 233, 168, 0.9);
     }
     .episode-dots {
       position: absolute;
@@ -174,16 +174,16 @@
       height: 7px;
       background: #ffe9a8;
       border-radius: 50%;
-      opacity: 0.55;
+      opacity: 0.65;
       transition: all 0.3s ease;
-      box-shadow: 0 0 5px rgba(232, 182, 76, 0.6);
+      box-shadow: 0 0 6px rgba(255, 233, 168, 0.7);
     }
     .ep-dot.active {
       width: 11px;
       height: 11px;
       background: #ffffff;
       opacity: 1;
-      box-shadow: 0 0 12px #ffe9a8, 0 0 18px rgba(232, 182, 76, 0.9);
+      box-shadow: 0 0 14px #ffe9a8, 0 0 22px rgba(255, 255, 255, 0.9);
     }
 
     /* Controls Row */
@@ -191,7 +191,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: rgba(240, 232, 210, 0.85);
+      color: rgba(247, 238, 215, 0.9);
       font-size: 0.85rem;
       letter-spacing: 0.05em;
     }
@@ -203,7 +203,7 @@
     .ui-btn {
       background: none;
       border: none;
-      color: #f0e8d2;
+      color: #f7eed7;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -216,9 +216,9 @@
       letter-spacing: 0.08em;
     }
     .ui-btn:hover {
-      color: #ffe9a8;
-      transform: scale(1.05);
-      text-shadow: 0 0 10px rgba(232, 182, 76, 0.8);
+      color: #ffffff;
+      transform: scale(1.08);
+      text-shadow: 0 0 12px rgba(255, 233, 168, 0.9);
     }
     .ui-btn svg {
       width: 18px;
@@ -226,18 +226,18 @@
       fill: currentColor;
     }
     .drawer-btn {
-      border: 1px solid rgba(232, 182, 76, 0.4);
-      padding: 3px 10px;
+      border: 1px solid rgba(255, 233, 168, 0.45);
+      padding: 3px 12px;
       border-radius: 12px;
-      background: rgba(232, 182, 76, 0.08);
+      background: linear-gradient(135deg, rgba(232, 182, 76, 0.15), rgba(255, 233, 168, 0.25));
     }
     .drawer-btn:hover {
-      background: rgba(232, 182, 76, 0.2);
+      background: linear-gradient(135deg, rgba(232, 182, 76, 0.3), rgba(255, 233, 168, 0.5));
     }
     .time-display {
       font-variant-numeric: tabular-nums;
-      font-size: 0.8rem;
-      color: rgba(240, 232, 210, 0.7);
+      font-size: 0.82rem;
+      color: rgba(247, 238, 215, 0.75);
     }
 
     /* Chapter Drawer Overlay */
@@ -245,19 +245,19 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: min(380px, 85vw);
+      width: min(390px, 86vw);
       height: 100%;
-      background: rgba(5, 11, 22, 0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-left: 1px solid rgba(232, 182, 76, 0.3);
+      background: rgba(3, 7, 18, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255, 233, 168, 0.35);
       z-index: 40;
       transform: translateX(100%);
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
       padding: 24px 20px;
-      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+      box-shadow: -12px 0 45px rgba(0, 0, 0, 0.85);
       overflow-y: auto;
     }
     #chapter-drawer.open {
@@ -267,7 +267,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(232, 182, 76, 0.25);
+      border-bottom: 1px solid rgba(255, 233, 168, 0.28);
       padding-bottom: 12px;
       margin-bottom: 16px;
     }
@@ -280,7 +280,7 @@
     .close-drawer-btn {
       background: none;
       border: none;
-      color: #f0e8d2;
+      color: #f7eed7;
       font-size: 1.4rem;
       cursor: pointer;
     }
@@ -291,28 +291,23 @@
       font-size: 0.82rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(232, 182, 76, 0.85);
+      color: rgba(255, 233, 168, 0.9);
       margin-bottom: 8px;
     }
     .shot-item {
       padding: 6px 10px;
       border-radius: 6px;
       font-size: 0.9rem;
-      color: rgba(240, 232, 210, 0.8);
+      color: rgba(247, 238, 215, 0.82);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       transition: all 0.2s;
     }
     .shot-item:hover {
-      background: rgba(232, 182, 76, 0.15);
-      color: #ffe9a8;
-      transform: translateX(4px);
-    }
-    .shot-item.current {
-      background: rgba(232, 182, 76, 0.25);
+      background: rgba(255, 233, 168, 0.18);
       color: #ffffff;
-      font-weight: 600;
+      transform: translateX(4px);
     }
 
     /* Title & Replay Screens */
@@ -322,9 +317,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(5, 11, 22, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(3, 7, 18, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       z-index: 50;
       display: flex;
       flex-direction: column;
@@ -340,10 +335,10 @@
       pointer-events: none !important;
     }
     .manuscript-frame {
-      border: 1px solid rgba(232, 182, 76, 0.4);
+      border: 1px solid rgba(255, 233, 168, 0.45);
       padding: clamp(24px, 5vw, 56px);
       border-radius: 8px;
-      box-shadow: inset 0 0 40px rgba(232, 182, 76, 0.08), 0 0 50px rgba(0, 0, 0, 0.85);
+      box-shadow: inset 0 0 50px rgba(255, 233, 168, 0.12), 0 0 60px rgba(0, 0, 0, 0.9);
       max-width: 680px;
       position: relative;
     }
@@ -352,7 +347,7 @@
       position: absolute;
       font-size: 14px;
       color: #ffe9a8;
-      opacity: 0.8;
+      opacity: 0.85;
     }
     .manuscript-frame::before { top: 8px; left: 10px; }
     .manuscript-frame::after { bottom: 8px; right: 10px; }
@@ -361,7 +356,7 @@
       font-weight: 400;
       letter-spacing: 0.22em;
       color: #ffe9a8;
-      text-shadow: 0 0 30px rgba(232, 182, 76, 0.45);
+      text-shadow: 0 0 32px rgba(255, 233, 168, 0.5);
       margin-bottom: 12px;
       text-transform: uppercase;
     }
@@ -369,14 +364,14 @@
       font-size: clamp(0.95rem, 1.8vw, 1.2rem);
       font-style: italic;
       letter-spacing: 0.1em;
-      color: rgba(240, 232, 210, 0.82);
+      color: rgba(247, 238, 215, 0.85);
       margin-bottom: 34px;
       line-height: 1.6;
     }
     .begin-btn {
-      background: linear-gradient(135deg, rgba(232, 182, 76, 0.22), rgba(197, 146, 46, 0.38));
-      border: 1px solid rgba(232, 182, 76, 0.65);
-      color: #ffe9a8;
+      background: linear-gradient(135deg, rgba(232, 182, 76, 0.3), rgba(255, 233, 168, 0.55));
+      border: 1px solid rgba(255, 233, 168, 0.8);
+      color: #ffffff;
       font-family: inherit;
       font-size: clamp(0.95rem, 1.8vw, 1.12rem);
       letter-spacing: 0.22em;
@@ -385,11 +380,11 @@
       border-radius: 30px;
       cursor: pointer;
       transition: all 0.4s ease;
-      box-shadow: 0 0 20px rgba(232, 182, 76, 0.25);
+      box-shadow: 0 0 24px rgba(255, 233, 168, 0.4);
     }
     .begin-btn:hover {
-      background: linear-gradient(135deg, rgba(232, 182, 76, 0.4), rgba(197, 146, 46, 0.6));
-      box-shadow: 0 0 32px rgba(232, 182, 76, 0.6);
+      background: linear-gradient(135deg, rgba(232, 182, 76, 0.5), rgba(255, 255, 255, 0.85));
+      box-shadow: 0 0 38px rgba(255, 233, 168, 0.8);
       transform: translateY(-2px);
     }
 
@@ -452,7 +447,7 @@
     <div id="title-screen">
       <div class="manuscript-frame">
         <h1 class="film-title">The Living Manuscript</h1>
-        <p class="film-subtitle">An illuminated journey through the twenty-two lights of the deep mind</p>
+        <p class="film-subtitle">A golden illuminated journey through the twenty-two lights of the deep mind</p>
         <button class="begin-btn" id="begin-btn">Enter the Room</button>
       </div>
     </div>
@@ -469,8 +464,7 @@
 
   <script>
     /**
-     * THE LIVING MANUSCRIPT — Masterwork Animation Production Engine
-     * Albrecht Dürer Burin Engraving & Web Audio Ambient Synthesis
+     * THE LIVING MANUSCRIPT — Polished Reflective Gold Masterwork Engine
      */
 
     // --- Asset Inlining ---
@@ -493,101 +487,47 @@
       { id: 5, title: "Episode 5 · The Veil and the Deep Mind", start: 1490, dur: 310 },
       { id: 6, title: "Episode 6 · The Three Octaves and the Choice", start: 1800, dur: 340 }
     ];
-    const TOTAL_DURATION = 2140; // ~35m 40s total runtime
+    const TOTAL_DURATION = 2140;
 
     // 31 Shots with timed VO lines
     const SHOTS = [
       // EPISODE 0: The Whole Picture (The Map)
-      {
-        id: "ep0_shot1",
-        ep: 0,
-        shot: 1,
-        title: "Shot 1 · The Descent",
-        epTitle: "EPISODE 0 · THE WHOLE PICTURE",
-        start: 0,
-        dur: 48,
-        vo: [
-          { text: "There is a room beneath your thinking.", start: 4, end: 18 },
-          { text: "Not beneath your head — beneath your noticing. Below the thoughts you hear, below the dreams you remember, there is a deep mind: a blueprint room, where the architecture of your inner life was drawn before you ever used it.", start: 19, end: 46 }
-        ]
-      },
-      {
-        id: "ep0_shot2",
-        ep: 0,
-        shot: 2,
-        title: "Shot 2 · The Twenty-Two Lights",
-        epTitle: "EPISODE 0 · THE WHOLE PICTURE",
-        start: 48,
-        dur: 48,
-        vo: [
-          { text: "In that room stand twenty-two lights. Twenty-one of them turn in three rings of seven — one ring for the mind, one for the body, one for the spirit. And at the center of them all burns a single golden light: the Choice.", start: 52, end: 74 },
-          { text: "Everything in the room is oriented around it, the way every compass needle answers the north.", start: 75, end: 94 }
-        ]
-      },
-      {
-        id: "ep0_shot3",
-        ep: 0,
-        shot: 3,
-        title: "Shot 3 · The Veil Falls",
-        epTitle: "EPISODE 0 · THE WHOLE PICTURE",
-        start: 96,
-        dur: 56,
-        vo: [
-          { text: "But to understand the room, you need to know what happened to it.", start: 98, end: 110 },
-          { text: "Once, the architecture was simple. Nine lights, unbroken, in perfect harmony. Then a veil fell — a curtain of forgetting — between two of the lights in each ring: between what is, and what could be.", start: 111, end: 130 },
-          { text: "And in the darkness the veil created, something entirely new became possible: choice. The shadows the veil cast slowly crystallized into new stations, until nine had become twenty-two. The veil is why you don't remember choosing this life. It is also why your choices matter.", start: 131, end: 151 }
-        ]
-      },
-      {
-        id: "ep0_shot4",
-        ep: 0,
-        shot: 4,
-        title: "Shot 4 · The Seven Stations (Montage)",
-        epTitle: "EPISODE 0 · THE WHOLE PICTURE",
-        start: 152,
-        dur: 70,
-        vo: [
-          { text: "Now — the seven functions. Forget the old names for a moment. Here is what they are, as one living process. Your process. It is happening right now, as you listen.", start: 154, end: 163 },
-          { text: "First, the eye. Your mind, as it is. Still. It only sees what it sees — it doesn't chase. Everything you will ever learn begins here, in the quiet of the eye simply being open.", start: 164, end: 173 },
-          { text: "But the eye cannot move itself. So there is the hand: the reach. Something in you extends outward into the dark, trying to touch what the eye sees. Curiosity. Longing. The hand does not know what it will find. It reaches anyway.", start: 174, end: 183 },
-          { text: "Where the reaching hand meets the world, there is the itch. Every unprocessed thing that lands on you — a word, a glance, a memory surfacing — blooms on the skin like an iridescent shimmer. It cannot be unfelt. And the hand must answer it — one way, or another.", start: 184, end: 193 },
-          { text: "The itch, answered, leaves the callus: the mark. Skin thickened where it was touched. A groove worn into you. This is what you keep — never all of what came, always partial, always shaped by the grooves already there. Next time the itch comes, the hand knows before it thinks.", start: 194, end: 202 },
-          { text: "And then the turn — the one you almost missed. Who reached? Who was itched? Who bears the mark?", start: 203, end: 208 },
-          { text: "You. The pen in the heart. A beautiful pen, embedded in a luminous heart — and with every beat, the heart orchestrates, and the pen writes. Not a step in the sequence. The writer of it. The self, formed by everything it has been through, now holding the pen.", start: 209, end: 214 },
-          { text: "The pen writes — and reaches a fork on the page. Two paths in the ink. The heart chooses. And here is the secret the whole room is built to protect: the pen is remade by what it chose to write. Finer nib. Different ink. The writer, rewritten by the writing. This is transformation — not something that happens to you, but the choice itself, made real.", start: 215, end: 218 },
-          { text: "And the writing? It doesn't stay on the page. The ink lines rise — they become roads. The finished page becomes a landscape: hills of script, rivers of ink, a horizon. And a small figure — your heir, your future self — begins to walk the roads your pen made. The road becomes the ground for everything that comes next.", start: 219, end: 222 }
-        ]
-      },
-      {
-        id: "ep0_shot5",
-        ep: 0,
-        shot: 5,
-        title: "Shot 5 · The Three Octaves",
-        epTitle: "EPISODE 0 · THE WHOLE PICTURE",
-        start: 222,
-        dur: 48,
-        vo: [
-          { text: "That is one ring. One octave. The mind's.", start: 224, end: 232 },
-          { text: "But the same seven stations turn twice more, in different physics. In the body, nothing is still: the eye's stillness becomes a gyroscope that can never stop spinning — it can only be steered, steadied by wisdom into grace.", start: 233, end: 248 },
-          { text: "In the spirit, there is no eye and no hand at all — only a primeval darkness that cannot move, and can only yearn… until its yearning calls down lightning, and the dark is shattered by light.", start: 249, end: 260 },
-          { text: "Three rings. Twenty-one lights. And at the center, the golden one: the Choice. The single decision that all of this has been preparing you to make. The axis the whole room turns on.", start: 261, end: 270 }
-        ]
-      },
-      {
-        id: "ep0_shot6",
-        ep: 0,
-        shot: 6,
-        title: "Shot 6 · Hold the Picture",
-        epTitle: "EPISODE 0 · THE WHOLE PICTURE",
-        start: 270,
-        dur: 40,
-        vo: [
-          { text: "Hold that picture. The room, the veil, the eye and the hand, the itch and the callus, the pen in the heart, the fork, the road become ground — three rings turning around one golden choice.", start: 272, end: 284 },
-          { text: "In the episodes that follow, we will walk each station slowly, one by one, until you could draw them blindfolded. But you will never be lost, because you carry the whole picture now.", start: 285, end: 295 },
-          { text: "Before we begin — pause. Take up a pen, a real one. And sketch the room as you see it: the eye, the hand, the heart. Don't aim for beauty. Aim for yours.", start: 296, end: 304 },
-          { text: "When you're ready… we begin with the eye.", start: 305, end: 310 }
-        ]
-      },
+      { id: "ep0_shot1", ep: 0, shot: 1, title: "Shot 1 · The Descent", epTitle: "EPISODE 0 · THE WHOLE PICTURE", start: 0, dur: 48, vo: [
+        { text: "There is a room beneath your thinking.", start: 4, end: 18 },
+        { text: "Not beneath your head — beneath your noticing. Below the thoughts you hear, below the dreams you remember, there is a deep mind: a blueprint room, where the architecture of your inner life was drawn before you ever used it.", start: 19, end: 46 }
+      ]},
+      { id: "ep0_shot2", ep: 0, shot: 2, title: "Shot 2 · The Twenty-Two Lights", epTitle: "EPISODE 0 · THE WHOLE PICTURE", start: 48, dur: 48, vo: [
+        { text: "In that room stand twenty-two lights. Twenty-one of them turn in three rings of seven — one ring for the mind, one for the body, one for the spirit. And at the center of them all burns a single golden light: the Choice.", start: 52, end: 74 },
+        { text: "Everything in the room is oriented around it, the way every compass needle answers the north.", start: 75, end: 94 }
+      ]},
+      { id: "ep0_shot3", ep: 0, shot: 3, title: "Shot 3 · The Veil Falls", epTitle: "EPISODE 0 · THE WHOLE PICTURE", start: 96, dur: 56, vo: [
+        { text: "But to understand the room, you need to know what happened to it.", start: 98, end: 110 },
+        { text: "Once, the architecture was simple. Nine lights, unbroken, in perfect harmony. Then a veil fell — a curtain of forgetting — between two of the lights in each ring: between what is, and what could be.", start: 111, end: 130 },
+        { text: "And in the darkness the veil created, something entirely new became possible: choice. The shadows the veil cast slowly crystallized into new stations, until nine had become twenty-two. The veil is why you don't remember choosing this life. It is also why your choices matter.", start: 131, end: 151 }
+      ]},
+      { id: "ep0_shot4", ep: 0, shot: 4, title: "Shot 4 · The Seven Stations (Montage)", epTitle: "EPISODE 0 · THE WHOLE PICTURE", start: 152, dur: 70, vo: [
+        { text: "Now — the seven functions. Forget the old names for a moment. Here is what they are, as one living process. Your process. It is happening right now, as you listen.", start: 154, end: 163 },
+        { text: "First, the eye. Your mind, as it is. Still. It only sees what it sees — it doesn't chase. Everything you will ever learn begins here, in the quiet of the eye simply being open.", start: 164, end: 173 },
+        { text: "But the eye cannot move itself. So there is the hand: the reach. Something in you extends outward into the dark, trying to touch what the eye sees. Curiosity. Longing. The hand does not know what it will find. It reaches anyway.", start: 174, end: 183 },
+        { text: "Where the reaching hand meets the world, there is the itch. Every unprocessed thing that lands on you — a word, a glance, a memory surfacing — blooms on the skin like an iridescent shimmer. It cannot be unfelt. And the hand must answer it — one way, or another.", start: 184, end: 193 },
+        { text: "The itch, answered, leaves the callus: the mark. Skin thickened where it was touched. A groove worn into you. This is what you keep — never all of what came, always partial, always shaped by the grooves already there. Next time the itch comes, the hand knows before it thinks.", start: 194, end: 202 },
+        { text: "And then the turn — the one you almost missed. Who reached? Who was itched? Who bears the mark?", start: 203, end: 208 },
+        { text: "You. The pen in the heart. A beautiful pen, embedded in a luminous heart — and with every beat, the heart orchestrates, and the pen writes. Not a step in the sequence. The writer of it. The self, formed by everything it has been through, now holding the pen.", start: 209, end: 214 },
+        { text: "The pen writes — and reaches a fork on the page. Two paths in the ink. The heart chooses. And here is the secret the whole room is built to protect: the pen is remade by what it chose to write. Finer nib. Different ink. The writer, rewritten by the writing. This is transformation — not something that happens to you, but the choice itself, made real.", start: 215, end: 218 },
+        { text: "And the writing? It doesn't stay on the page. The ink lines rise — they become roads. The finished page becomes a landscape: hills of script, rivers of ink, a horizon. And a small figure — your heir, your future self — begins to walk the roads your pen made. The road becomes the ground for everything that comes next.", start: 219, end: 222 }
+      ]},
+      { id: "ep0_shot5", ep: 0, shot: 5, title: "Shot 5 · The Three Octaves", epTitle: "EPISODE 0 · THE WHOLE PICTURE", start: 222, dur: 48, vo: [
+        { text: "That is one ring. One octave. The mind's.", start: 224, end: 232 },
+        { text: "But the same seven stations turn twice more, in different physics. In the body, nothing is still: the eye's stillness becomes a gyroscope that can never stop spinning — it can only be steered, steadied by wisdom into grace.", start: 233, end: 248 },
+        { text: "In the spirit, there is no eye and no hand at all — only a primeval darkness that cannot move, and can only yearn… until its yearning calls down lightning, and the dark is shattered by light.", start: 249, end: 260 },
+        { text: "Three rings. Twenty-one lights. And at the center, the golden one: the Choice. The single decision that all of this has been preparing you to make. The axis the whole room turns on.", start: 261, end: 270 }
+      ]},
+      { id: "ep0_shot6", ep: 0, shot: 6, title: "Shot 6 · Hold the Picture", epTitle: "EPISODE 0 · THE WHOLE PICTURE", start: 270, dur: 40, vo: [
+        { text: "Hold that picture. The room, the veil, the eye and the hand, the itch and the callus, the pen in the heart, the fork, the road become ground — three rings turning around one golden choice.", start: 272, end: 284 },
+        { text: "In the episodes that follow, we will walk each station slowly, one by one, until you could draw them blindfolded. But you will never be lost, because you carry the whole picture now.", start: 285, end: 295 },
+        { text: "Before we begin — pause. Take up a pen, a real one. And sketch the room as you see it: the eye, the hand, the heart. Don't aim for beauty. Aim for yours.", start: 296, end: 304 },
+        { text: "When you're ready… we begin with the eye.", start: 305, end: 310 }
+      ]},
 
       // EPISODE 1: The Eye and the Hand
       { id: "ep1_shot1", ep: 1, shot: 1, title: "Shot 1 · The Eye", epTitle: "EPISODE 1 · THE EYE AND THE HAND", start: 310, dur: 65, vo: [
@@ -720,7 +660,7 @@
       ]}
     ];
 
-    // Seeded PRNG for deterministic flourishes
+    // Seeded PRNG
     function Mulberry32(seed) {
       let s = seed >>> 0;
       return function() {
@@ -732,7 +672,7 @@
     }
     const rng = Mulberry32(108108);
 
-    // Celestial Dust Motes
+    // Celestial Dust Motes with gold luster
     const DUST_MOTES = [];
     for (let i = 0; i < 90; i++) {
       DUST_MOTES.push({
@@ -742,7 +682,7 @@
         speedY: (rng() - 0.5) * 0.003,
         size: 0.8 + rng() * 2.2,
         phase: rng() * Math.PI * 2,
-        alpha: 0.25 + rng() * 0.55
+        alpha: 0.3 + rng() * 0.55
       });
     }
 
@@ -790,11 +730,10 @@
 
       const filter = audioCtx.createBiquadFilter();
       filter.type = "lowpass";
-      filter.frequency.setValueAtTime(320, audioCtx.currentTime);
-      filter.Q.setValueAtTime(2.2, audioCtx.currentTime);
+      filter.frequency.setValueAtTime(340, audioCtx.currentTime);
+      filter.Q.setValueAtTime(2.4, audioCtx.currentTime);
       filter.connect(masterGain);
 
-      // Low harmonic drones: D2, A2, D3
       const freqs = [73.41, 110.0, 146.83];
       droneOscs = freqs.map((f, i) => {
         const osc = audioCtx.createOscillator();
@@ -808,11 +747,10 @@
         return osc;
       });
 
-      // Subtle breathing LFO
       lfoNode = audioCtx.createOscillator();
       const lfoGain = audioCtx.createGain();
       lfoNode.frequency.setValueAtTime(0.12, audioCtx.currentTime);
-      lfoGain.gain.setValueAtTime(75, audioCtx.currentTime);
+      lfoGain.gain.setValueAtTime(80, audioCtx.currentTime);
       lfoNode.connect(lfoGain);
       lfoGain.connect(filter.frequency);
       lfoNode.start();
@@ -827,7 +765,7 @@
         const g = audioCtx.createGain();
         osc.type = "sine";
         osc.frequency.setValueAtTime(freq * h, t);
-        const gainVal = (0.12 / (idx + 1)) * Math.exp(-idx * 0.4);
+        const gainVal = (0.13 / (idx + 1)) * Math.exp(-idx * 0.4);
         g.gain.setValueAtTime(gainVal, t);
         g.gain.exponentialRampToValueAtTime(0.0001, t + 4.5);
         osc.connect(g);
@@ -840,24 +778,22 @@
     function playHeartPulse() {
       if (!audioCtx || isMuted) return;
       const t = audioCtx.currentTime;
-      // Lub
       const osc1 = audioCtx.createOscillator();
       const g1 = audioCtx.createGain();
       osc1.frequency.setValueAtTime(54, t);
       osc1.frequency.exponentialRampToValueAtTime(32, t + 0.18);
-      g1.gain.setValueAtTime(0.18, t);
+      g1.gain.setValueAtTime(0.2, t);
       g1.gain.exponentialRampToValueAtTime(0.001, t + 0.18);
       osc1.connect(g1);
       g1.connect(masterGain);
       osc1.start(t);
       osc1.stop(t + 0.2);
 
-      // Dub
       const osc2 = audioCtx.createOscillator();
       const g2 = audioCtx.createGain();
       osc2.frequency.setValueAtTime(62, t + 0.22);
       osc2.frequency.exponentialRampToValueAtTime(36, t + 0.42);
-      g2.gain.setValueAtTime(0.14, t + 0.22);
+      g2.gain.setValueAtTime(0.15, t + 0.22);
       g2.gain.exponentialRampToValueAtTime(0.001, t + 0.42);
       osc2.connect(g2);
       g2.connect(masterGain);
@@ -872,14 +808,14 @@
       }
       const now = audioCtx.currentTime;
       if (isPlaying && !isMuted) {
-        masterGain.gain.setTargetAtTime(0.48, now, 0.4);
+        masterGain.gain.setTargetAtTime(0.5, now, 0.4);
       } else {
         masterGain.gain.setTargetAtTime(0.0001, now, 0.2);
       }
 
       const isHeartbeatZone = (t >= 48 && t < 96) || (t >= 980 && t < 1055) || (t >= 1970 && t < 2055);
       if (isPlaying && isHeartbeatZone) {
-        const beatInterval = 1.0; // 60 BPM
+        const beatInterval = 1.0;
         if (now >= heartbeatNextTime) {
           playHeartPulse();
           heartbeatNextTime = now + beatInterval;
@@ -887,107 +823,162 @@
       }
     }
 
-    // --- Helper Drawing Utilities ---
-    function setGoldGlow(intensity = 1) {
-      ctx.shadowBlur = 14 * S * intensity;
-      ctx.shadowColor = "rgba(232, 182, 76, " + (0.55 * intensity) + ")";
+    // --- GOLD & REFLECTIVE SHADER UTILITIES ---
+
+    // Creates dynamic multi-stop reflective metallic gold gradient with moving specular highlights
+    function createReflectiveGoldGradient(x0, y0, x1, y1, t = 0) {
+      const grad = ctx.createLinearGradient(x0, y0, x1, y1);
+      const shift = (Math.sin(t * 1.5) * 0.1);
+      grad.addColorStop(0, "#ffffff");
+      grad.addColorStop(Math.max(0, 0.12 + shift), "#fff2c4");
+      grad.addColorStop(Math.max(0, 0.28 + shift), "#e8b64c");
+      grad.addColorStop(Math.max(0, 0.52 + shift), "#8a5810");
+      grad.addColorStop(Math.min(1, 0.72 + shift), "#ffd97d");
+      grad.addColorStop(Math.min(1, 0.88 + shift), "#c5922e");
+      grad.addColorStop(1, "#ffffff");
+      return grad;
     }
-    function clearGlow() {
+
+    // Dynamic diamond specular flare on gold rims
+    function drawGlint(x, y, size = 20, intensity = 1.0) {
+      ctx.save();
+      ctx.translate(x, y);
+
+      const flareGrad = ctx.createRadialGradient(0, 0, 1, 0, 0, size * S);
+      flareGrad.addColorStop(0, "#ffffff");
+      flareGrad.addColorStop(0.25, "rgba(255, 245, 210, " + (0.9 * intensity) + ")");
+      flareGrad.addColorStop(0.6, "rgba(232, 182, 76, " + (0.35 * intensity) + ")");
+      flareGrad.addColorStop(1, "transparent");
+
+      ctx.fillStyle = flareGrad;
+      ctx.beginPath();
+      ctx.arc(0, 0, size * S, 0, Math.PI * 2);
+      ctx.fill();
+
+      // 4-point Diamond Specular Cross
+      ctx.strokeStyle = "rgba(255, 255, 255, " + (0.95 * intensity) + ")";
+      ctx.lineWidth = 1.8 * S;
+      ctx.beginPath();
+      ctx.moveTo(-size * 0.9 * S, 0);
+      ctx.lineTo(size * 0.9 * S, 0);
+      ctx.moveTo(0, -size * 0.9 * S);
+      ctx.lineTo(0, size * 0.9 * S);
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    // Ambient gold luster glow
+    function setGoldLuster(intensity = 1) {
+      ctx.shadowBlur = 18 * S * intensity;
+      ctx.shadowColor = "rgba(255, 233, 168, " + (0.65 * intensity) + ")";
+    }
+    function clearLuster() {
       ctx.shadowBlur = 0;
       ctx.shadowColor = "transparent";
     }
 
+    // Draws soft mirror floor reflection
+    function drawMirrorReflection(renderFn, mirrorY, alpha = 0.22) {
+      ctx.save();
+      ctx.translate(0, mirrorY);
+      ctx.scale(1, -0.45); // squashed inverted reflection
+      ctx.globalAlpha *= alpha;
+      renderFn();
+
+      // Fade out reflection into dark floor
+      const fadeGrad = ctx.createLinearGradient(0, 0, 0, 300 * S);
+      fadeGrad.addColorStop(0, "rgba(3, 7, 18, 0.2)");
+      fadeGrad.addColorStop(1, "rgba(3, 7, 18, 1)");
+      ctx.fillStyle = fadeGrad;
+      ctx.fillRect(-width, 0, width * 2, 400 * S);
+      ctx.restore();
+    }
+
     function drawVellumBackground(t) {
+      // Midnight velvet background with living candle glow
       const candleLuster = 1.0 + Math.sin(t * 1.8) * 0.025 + Math.cos(t * 3.4) * 0.015;
-      const bgGrad = ctx.createRadialGradient(cx, cy, 100 * S * candleLuster, cx, cy, Math.max(width, height) * 0.75);
-      bgGrad.addColorStop(0, "#0a1428");
-      bgGrad.addColorStop(0.65, "#050b16");
-      bgGrad.addColorStop(1, "#020409");
+      const bgGrad = ctx.createRadialGradient(cx, cy, 120 * S * candleLuster, cx, cy, Math.max(width, height) * 0.8);
+      bgGrad.addColorStop(0, "#081122");
+      bgGrad.addColorStop(0.6, "#030712");
+      bgGrad.addColorStop(1, "#010308");
       ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, width, height);
 
-      // Celestial dust motes
+      // Gold leaf motes
       for (let i = 0; i < DUST_MOTES.length; i++) {
         const m = DUST_MOTES[i];
         const px = ((m.baseX + t * m.speedX) % 1) * width;
         const py = ((m.baseY + Math.sin(t * 0.2 + m.phase) * 0.04) % 1) * height;
         const pulse = 0.5 + 0.5 * Math.sin(t * 1.5 + m.phase);
-        ctx.fillStyle = "rgba(255, 233, 168, " + (m.alpha * pulse * 0.65) + ")";
+        ctx.fillStyle = "rgba(255, 233, 168, " + (m.alpha * pulse * 0.75) + ")";
         ctx.beginPath();
         ctx.arc(px, py, m.size * S, 0, Math.PI * 2);
         ctx.fill();
       }
     }
 
-    // --- EPISODE 0 PROCEDURAL RENDERERS ---
+    // --- EPISODE 0: THE MAP (Reflective Gilded Masterwork) ---
 
-    // Shot 1: The Descent
     function drawDescent(localT, alpha) {
       if (alpha <= 0.001) return;
       ctx.save();
       ctx.globalAlpha = alpha;
 
       const progress = Math.min(localT / 44, 1.0);
-      const easeY = progress * progress * (3 - 2 * progress); // smooth cubic
+      const easeY = progress * progress * (3 - 2 * progress);
       const scrollOffset = (1 - easeY) * 600 * S;
 
       ctx.translate(cx, cy + scrollOffset);
 
-      // Depth Layer 1 (Surface Thoughts: fleeting golden lines and thought motes)
+      // Layer 1: Floating thoughts as minted golden flakes
       if (progress < 0.45) {
         const layer1Alpha = Math.max(0, 1 - progress / 0.45);
         ctx.save();
         ctx.globalAlpha = alpha * layer1Alpha;
-        ctx.strokeStyle = "rgba(232, 182, 76, 0.45)";
-        ctx.lineWidth = 1.2 * S;
         for (let i = 0; i < 12; i++) {
-          const angle = (i / 12) * Math.PI * 2 + localT * 0.08;
+          const a = (i / 12) * Math.PI * 2 + localT * 0.08;
           const r = 240 * S + Math.sin(localT * 1.5 + i) * 30 * S;
+          const fx = Math.cos(a) * r;
+          const fy = -450 * S + Math.sin(a) * r * 0.35;
+          ctx.fillStyle = createReflectiveGoldGradient(fx - 15 * S, fy - 15 * S, fx + 15 * S, fy + 15 * S, localT);
           ctx.beginPath();
-          ctx.arc(0, -450 * S, r, angle, angle + 0.25);
-          ctx.stroke();
+          ctx.arc(fx, fy, (3 + (i % 3)) * S, 0, Math.PI * 2);
+          ctx.fill();
         }
         ctx.restore();
       }
 
-      // Depth Layer 2 (Dream Currents: warmer amber drifting waves)
+      // Layer 2: Amber & molten gold wave currents
       if (progress > 0.15 && progress < 0.75) {
         const layer2Alpha = Math.sin(((progress - 0.15) / 0.6) * Math.PI);
         ctx.save();
         ctx.globalAlpha = alpha * layer2Alpha;
-        ctx.strokeStyle = "rgba(217, 119, 6, 0.55)";
-        ctx.lineWidth = 1.6 * S;
         for (let j = -3; j <= 3; j++) {
           ctx.beginPath();
           const waveY = -150 * S + j * 45 * S;
           ctx.moveTo(-width / 2, waveY);
           for (let x = -width / 2; x <= width / 2; x += 40 * S) {
-            const dy = Math.sin(x * 0.006 + localT * 1.2 + j) * 22 * S;
+            const dy = Math.sin(x * 0.006 + localT * 1.2 + j) * 24 * S;
             ctx.lineTo(x, waveY + dy);
           }
+          ctx.strokeStyle = createReflectiveGoldGradient(-width / 2, waveY, width / 2, waveY, localT);
+          ctx.lineWidth = 1.8 * S;
           ctx.stroke();
         }
         ctx.restore();
       }
 
-      // Depth Layer 3 (The Veil: vast curtain of drifting shadow with translucent folds)
+      // Layer 3: The Veil with shimmering metallic gold threads
       if (progress > 0.4 && progress < 0.95) {
         const veilAlpha = Math.sin(((progress - 0.4) / 0.55) * Math.PI);
         ctx.save();
-        ctx.globalAlpha = alpha * veilAlpha * 0.85;
+        ctx.globalAlpha = alpha * veilAlpha * 0.88;
         for (let k = 0; k < 7; k++) {
           const vx = (k - 3) * 110 * S + Math.sin(localT * 0.6 + k) * 35 * S;
-          const vGrad = ctx.createLinearGradient(vx - 50 * S, 0, vx + 50 * S, 0);
-          vGrad.addColorStop(0, "transparent");
-          vGrad.addColorStop(0.5, "rgba(5, 11, 22, 0.92)");
-          vGrad.addColorStop(1, "transparent");
-          ctx.fillStyle = vGrad;
-          ctx.fillRect(vx - 60 * S, 50 * S, 120 * S, 400 * S);
-
-          // Shimmering fold hem line
-          ctx.strokeStyle = "rgba(232, 182, 76, 0.35)";
-          ctx.lineWidth = 1.2 * S;
-          ctx.setLineDash([6 * S, 8 * S]);
+          ctx.strokeStyle = createReflectiveGoldGradient(vx, 50 * S, vx + 30 * S, 450 * S, localT + k);
+          ctx.lineWidth = 1.4 * S;
+          ctx.setLineDash([8 * S, 8 * S]);
           ctx.beginPath();
           ctx.moveTo(vx, 50 * S);
           ctx.lineTo(vx + Math.sin(localT + k) * 20 * S, 450 * S);
@@ -997,24 +988,20 @@
         ctx.restore();
       }
 
-      // Depth Layer 4 (The Deep Blueprint Room: faint sacred geometry construction lines)
+      // Layer 4: Blueprint room in burnished reflective gold
       const roomAlpha = Math.min(Math.max((progress - 0.55) / 0.4, 0), 1.0);
       if (roomAlpha > 0.01) {
         ctx.save();
         ctx.globalAlpha = alpha * roomAlpha;
-        setGoldGlow(0.8);
 
-        // Blueprint Grid floor
-        ctx.strokeStyle = "rgba(232, 182, 76, 0.4)";
-        ctx.lineWidth = 1.2 * S;
-
-        // Concentric geometry & compass arcs
-        [120, 220, 320, 420].forEach((r, idx) => {
+        [130, 230, 330, 430].forEach((r, idx) => {
+          ctx.strokeStyle = createReflectiveGoldGradient(-r * S, -r * S, r * S, r * S, localT);
+          ctx.lineWidth = 1.6 * S;
           ctx.beginPath();
           ctx.arc(0, 0, r * S, 0, Math.PI * 2);
           ctx.stroke();
 
-          // Compass hash marks
+          // Minted compass notches
           for (let deg = 0; deg < 360; deg += 30) {
             const rad = (deg * Math.PI) / 180;
             const x1 = Math.cos(rad) * (r - 7) * S;
@@ -1028,32 +1015,16 @@
           }
         });
 
-        // Intersecting Vesica Piscis arcs
-        ctx.strokeStyle = "rgba(255, 233, 168, 0.25)";
-        ctx.beginPath();
-        ctx.arc(-80 * S, 0, 160 * S, 0, Math.PI * 2);
-        ctx.arc(80 * S, 0, 160 * S, 0, Math.PI * 2);
-        ctx.stroke();
+        // Specular glint on compass center
+        drawGlint(0, 0, 22, 0.85);
 
-        // Cross-hair axis
-        ctx.strokeStyle = "rgba(232, 182, 76, 0.45)";
-        ctx.setLineDash([4 * S, 8 * S]);
-        ctx.beginPath();
-        ctx.moveTo(-width / 2, 0);
-        ctx.lineTo(width / 2, 0);
-        ctx.moveTo(0, -height / 2);
-        ctx.lineTo(0, height / 2);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        clearGlow();
         ctx.restore();
       }
 
       ctx.restore();
     }
 
-    // Shot 2: The Twenty-Two Lights
+    // Shot 2: Twenty-Two Lights (Solid Gold Pieces & Gems)
     function drawTwentyTwoLights(localT, alpha) {
       if (alpha <= 0.001) return;
       ctx.save();
@@ -1061,41 +1032,44 @@
       ctx.translate(cx, cy);
 
       const rings = [
-        { name: "Mind", count: 7, radius: 320 * S, color: "#60a5fa", glow: "rgba(96, 165, 250, 0.9)", speed: 0.04 },
-        { name: "Body", count: 7, radius: 220 * S, color: "#f59e0b", glow: "rgba(245, 158, 11, 0.9)", speed: -0.05 },
-        { name: "Spirit", count: 7, radius: 130 * S, color: "#c084fc", glow: "rgba(192, 132, 252, 0.9)", speed: 0.06 }
+        { name: "Mind", count: 7, radius: 320 * S, color: "#60a5fa", gemGrad: ["#ffffff", "#93c5fd", "#2563eb", "#1e3a8a"], speed: 0.04 },
+        { name: "Body", count: 7, radius: 220 * S, color: "#f59e0b", gemGrad: ["#ffffff", "#fde68a", "#d97706", "#78350f"], speed: -0.05 },
+        { name: "Spirit", count: 7, radius: 130 * S, color: "#c084fc", gemGrad: ["#ffffff", "#e9d5ff", "#9333ea", "#581c87"], speed: 0.06 }
       ];
 
-      // Blueprint base rings
-      ctx.strokeStyle = "rgba(232, 182, 76, 0.35)";
-      ctx.lineWidth = 1.4 * S;
+      // Cast gold concentric track rings
       rings.forEach(r => {
+        ctx.strokeStyle = createReflectiveGoldGradient(-r.radius, -r.radius, r.radius, r.radius, localT);
+        ctx.lineWidth = 2 * S;
         ctx.beginPath();
         ctx.arc(0, 0, r.radius, 0, Math.PI * 2);
         ctx.stroke();
       });
 
-      // Central Golden Light: The Choice
-      const pulse = 1.0 + Math.sin(localT * 3.14) * 0.16; // 60 BPM heartbeat pulse
-      setGoldGlow(1.8);
-      const choiceGrad = ctx.createRadialGradient(0, 0, 4 * S, 0, 0, 44 * S * pulse);
-      choiceGrad.addColorStop(0, "#ffffff");
-      choiceGrad.addColorStop(0.3, "#ffe9a8");
-      choiceGrad.addColorStop(0.7, "#e8b64c");
-      choiceGrad.addColorStop(1, "transparent");
-      ctx.fillStyle = choiceGrad;
+      // Central Golden Light: The Choice (Solid Polished Gold Medallion)
+      const pulse = 1.0 + Math.sin(localT * 3.14) * 0.16;
+      setGoldLuster(1.8);
+
+      // Gold bevel base
+      ctx.fillStyle = createReflectiveGoldGradient(-45 * S, -45 * S, 45 * S, 45 * S, localT);
       ctx.beginPath();
-      ctx.arc(0, 0, 44 * S * pulse, 0, Math.PI * 2);
+      ctx.arc(0, 0, 42 * S * pulse, 0, Math.PI * 2);
       ctx.fill();
 
-      // Central core dot
-      ctx.fillStyle = "#ffffff";
+      // Brilliant reflective white-gold core
+      const coreGrad = ctx.createRadialGradient(0, 0, 2 * S, 0, 0, 20 * S * pulse);
+      coreGrad.addColorStop(0, "#ffffff");
+      coreGrad.addColorStop(0.4, "#fff4cc");
+      coreGrad.addColorStop(1, "transparent");
+      ctx.fillStyle = coreGrad;
       ctx.beginPath();
-      ctx.arc(0, 0, 7 * S, 0, Math.PI * 2);
+      ctx.arc(0, 0, 20 * S * pulse, 0, Math.PI * 2);
       ctx.fill();
-      clearGlow();
 
-      // The 21 Lights (3 rings of 7)
+      drawGlint(0, 0, 36, 1.0);
+      clearLuster();
+
+      // The 21 Gilded Jewel Pieces
       rings.forEach((ring, ringIdx) => {
         const ringAngle = localT * ring.speed;
         for (let i = 0; i < ring.count; i++) {
@@ -1107,29 +1081,37 @@
           const lx = Math.cos(angle) * ring.radius;
           const ly = Math.sin(angle) * ring.radius;
 
-          // Compass needle line oriented toward the golden Choice center
-          ctx.strokeStyle = "rgba(232, 182, 76, " + (0.35 * lightAlpha) + ")";
-          ctx.lineWidth = 1.1 * S;
+          // Reflective gold needle ray pointing to center Choice
+          ctx.strokeStyle = createReflectiveGoldGradient(lx, ly, 0, 0, localT + i);
+          ctx.lineWidth = 1.4 * S;
           ctx.beginPath();
           ctx.moveTo(lx, ly);
           ctx.lineTo(0, 0);
           ctx.stroke();
 
-          // Light glow & star burst
+          // Gold bezel setting
           ctx.save();
           ctx.globalAlpha = alpha * lightAlpha;
-          ctx.shadowBlur = 16 * S;
-          ctx.shadowColor = ring.glow;
-          ctx.fillStyle = ring.color;
+          ctx.fillStyle = createReflectiveGoldGradient(lx - 12 * S, ly - 12 * S, lx + 12 * S, ly + 12 * S, localT);
           ctx.beginPath();
-          ctx.arc(lx, ly, (6.5 + Math.sin(localT * 2 + i) * 1.8) * S, 0, Math.PI * 2);
+          ctx.arc(lx, ly, 9 * S, 0, Math.PI * 2);
           ctx.fill();
 
-          // Brilliant white core
-          ctx.fillStyle = "#ffffff";
+          // Faceted jewel center
+          const gem = ctx.createRadialGradient(lx - 2 * S, ly - 2 * S, 1 * S, lx, ly, 6 * S);
+          gem.addColorStop(0, ring.gemGrad[0]);
+          gem.addColorStop(0.3, ring.gemGrad[1]);
+          gem.addColorStop(0.7, ring.gemGrad[2]);
+          gem.addColorStop(1, ring.gemGrad[3]);
+          ctx.fillStyle = gem;
           ctx.beginPath();
-          ctx.arc(lx, ly, 3.2 * S, 0, Math.PI * 2);
+          ctx.arc(lx, ly, 6 * S, 0, Math.PI * 2);
           ctx.fill();
+
+          // Specular glint on jewel bezel
+          if (i % 2 === 0) {
+            drawGlint(lx, ly, 14, 0.7);
+          }
           ctx.restore();
         }
       });
@@ -1148,9 +1130,9 @@
       const veilDropTime = Math.max(0, localT - 14);
 
       if (isRewind) {
-        // Flashback: 9 primordial lights in unbroken circular harmony
-        ctx.strokeStyle = "rgba(255, 233, 168, 0.45)";
-        ctx.lineWidth = 1.4 * S;
+        // 9 primordial gold pieces in harmony
+        ctx.strokeStyle = createReflectiveGoldGradient(-240 * S, -240 * S, 240 * S, 240 * S, localT);
+        ctx.lineWidth = 2 * S;
         ctx.beginPath();
         ctx.arc(0, 0, 240 * S, 0, Math.PI * 2);
         ctx.stroke();
@@ -1160,28 +1142,26 @@
           const x = Math.cos(a) * 240 * S;
           const y = Math.sin(a) * 240 * S;
 
-          setGoldGlow(1.4);
-          ctx.fillStyle = "#ffe9a8";
+          ctx.fillStyle = createReflectiveGoldGradient(x - 12 * S, y - 12 * S, x + 12 * S, y + 12 * S, localT + i);
           ctx.beginPath();
-          ctx.arc(x, y, 8 * S, 0, Math.PI * 2);
+          ctx.arc(x, y, 10 * S, 0, Math.PI * 2);
           ctx.fill();
-          clearGlow();
+          drawGlint(x, y, 16, 0.8);
         }
       } else {
-        // The Veil Membrane descends deliberately between stations
         const curtainY = Math.min(veilDropTime * 45 * S - 400 * S, 0);
 
-        // Dark membrane line with ornate burin curtain folds
-        ctx.strokeStyle = "rgba(232, 182, 76, 0.55)";
-        ctx.lineWidth = 2.2 * S;
-        ctx.setLineDash([8 * S, 6 * S]);
+        // Gilded horizontal veil threshold
+        ctx.strokeStyle = createReflectiveGoldGradient(-width / 2, curtainY, width / 2, curtainY, localT);
+        ctx.lineWidth = 2.8 * S;
+        ctx.setLineDash([10 * S, 8 * S]);
         ctx.beginPath();
         ctx.moveTo(-width / 2, curtainY);
         ctx.lineTo(width / 2, curtainY);
         ctx.stroke();
         ctx.setLineDash([]);
 
-        // New stations crystallizing out of shadows (up to 22)
+        // New gold pieces crystallizing
         const crystallizeCount = Math.floor(Math.min(veilDropTime * 0.8, 22));
         for (let c = 0; c < crystallizeCount; c++) {
           const ringIdx = c % 3;
@@ -1190,35 +1170,33 @@
           const lx = Math.cos(a) * radius;
           const ly = Math.sin(a) * radius;
 
-          setGoldGlow(1.3);
-          ctx.fillStyle = ringIdx === 0 ? "#60a5fa" : (ringIdx === 1 ? "#f59e0b" : "#c084fc");
+          ctx.fillStyle = createReflectiveGoldGradient(lx - 10 * S, ly - 10 * S, lx + 10 * S, ly + 10 * S, localT + c);
           ctx.beginPath();
-          ctx.arc(lx, ly, 6.5 * S, 0, Math.PI * 2);
+          ctx.arc(lx, ly, 8 * S, 0, Math.PI * 2);
           ctx.fill();
 
-          // Compass axis link
-          ctx.strokeStyle = "rgba(255, 233, 168, 0.28)";
-          ctx.lineWidth = 1 * S;
+          ctx.strokeStyle = "rgba(255, 233, 168, 0.35)";
+          ctx.lineWidth = 1.2 * S;
           ctx.beginPath();
           ctx.moveTo(lx, ly);
           ctx.lineTo(0, 0);
           ctx.stroke();
-          clearGlow();
         }
 
         // Center Choice
-        setGoldGlow(1.5);
-        ctx.fillStyle = "#ffe9a8";
+        setGoldLuster(1.5);
+        ctx.fillStyle = createReflectiveGoldGradient(-15 * S, -15 * S, 15 * S, 15 * S, localT);
         ctx.beginPath();
-        ctx.arc(0, 0, 11 * S, 0, Math.PI * 2);
+        ctx.arc(0, 0, 14 * S, 0, Math.PI * 2);
         ctx.fill();
-        clearGlow();
+        drawGlint(0, 0, 24, 0.9);
+        clearLuster();
       }
 
       ctx.restore();
     }
 
-    // Shot 4: Seven Stations Montage (Aligned to Spoken VO Track)
+    // Shot 4: Seven Stations Montage (Gilded Masterwork Pieces)
     function drawSevenStationsMontage(localT, alpha) {
       if (alpha <= 0.001) return;
       ctx.save();
@@ -1228,16 +1206,6 @@
       const isPortrait = width < height;
       const portraitScale = isPortrait ? 0.74 : 1.0;
 
-      // Determine active station from exact timeline
-      // t < 164: Intro overview
-      // 164-174: Eye
-      // 174-184: Hand (Pure Dark Reach - NO BEACON)
-      // 184-194: Itch (Iridescent Shimmer)
-      // 194-203: Callus (Record, never armor)
-      // 203-208: Turn / Who? (Question mark)
-      // 209-215: Pen in Heart (Significator Reveal)
-      // 215-219: Fork in ink
-      // 219+: Road rising into ground
       let stationIndex = -1;
       let subT = 0;
       if (t >= 164 && t < 174) { stationIndex = 0; subT = t - 164; }
@@ -1253,105 +1221,99 @@
       ctx.scale(portraitScale, portraitScale);
 
       if (stationIndex === -1) {
-        // Overview blueprint mandala
-        ctx.strokeStyle = "rgba(232, 182, 76, 0.4)";
-        ctx.lineWidth = 1.2 * S;
+        // Gilded 7-pointed mandala
+        ctx.strokeStyle = createReflectiveGoldGradient(-160 * S, -160 * S, 160 * S, 160 * S, localT);
+        ctx.lineWidth = 2 * S;
         ctx.beginPath();
         ctx.arc(0, 0, 160 * S, 0, Math.PI * 2);
         ctx.stroke();
-        for (let i = 0; i < 7; i++) {
-          const a = (i / 7) * Math.PI * 2 + localT * 0.05;
-          ctx.fillStyle = "#ffe9a8";
-          ctx.beginPath();
-          ctx.arc(Math.cos(a) * 160 * S, Math.sin(a) * 160 * S, 5 * S, 0, Math.PI * 2);
-          ctx.fill();
-        }
       } else if (stationIndex === 0) {
-        // Station 1: The Eye (Dürer Still Witness)
+        // Station 1: The Eye (Solid Gold Embossed Medallion)
+        const eyeSize = 350 * S;
         if (masterEyeImg.complete && masterEyeImg.naturalWidth > 0) {
-          const eyeSize = 350 * S;
           ctx.drawImage(masterEyeImg, -eyeSize / 2, -eyeSize / 2, eyeSize, eyeSize);
         }
-        ctx.strokeStyle = "rgba(232, 182, 76, 0.4)";
-        ctx.lineWidth = 1.2 * S;
+        // Gilded bevel rim
+        ctx.strokeStyle = createReflectiveGoldGradient(-eyeSize / 2, -eyeSize / 2, eyeSize / 2, eyeSize / 2, localT);
+        ctx.lineWidth = 3.5 * S;
         ctx.beginPath();
-        ctx.arc(0, 0, 180 * S, 0, Math.PI * 2);
+        ctx.arc(0, 0, 175 * S, 0, Math.PI * 2);
         ctx.stroke();
+        drawGlint(Math.cos(localT) * 175 * S, Math.sin(localT) * 175 * S, 26, 0.9);
       } else if (stationIndex === 1) {
-        // Station 2: The Hand Reaching into Pure Dark (CRITICAL: NO BEACON)
+        // Station 2: The Hand (Sculpted Reflective Gold Hand Reaching into Pure Dark - NO BEACON)
+        const handSize = 390 * S;
+        const reachExt = Math.sin(subT * 0.5) * 22 * S;
         if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
-          const handSize = 390 * S;
-          const reachExt = Math.sin(subT * 0.5) * 22 * S;
           ctx.drawImage(masterHandImg, -handSize / 2 - 30 * S + reachExt, -handSize / 2, handSize, handSize);
         }
-        // Fructifying light flowing back along reach toward eye
-        const flowGrad = ctx.createLinearGradient(140 * S, 0, -180 * S, 0);
-        flowGrad.addColorStop(0, "rgba(255, 233, 168, 0.5)");
-        flowGrad.addColorStop(1, "transparent");
-        ctx.strokeStyle = flowGrad;
-        ctx.lineWidth = 2 * S;
+        // Gilded rim specular sweep
+        const hgx = reachExt + 40 * S;
+        const hgy = -40 * S;
+        drawGlint(hgx, hgy, 24, 0.85);
+
+        // Fructifying golden light flowing back
+        ctx.strokeStyle = createReflectiveGoldGradient(140 * S, 0, -180 * S, 0, localT);
+        ctx.lineWidth = 2.4 * S;
         ctx.beginPath();
         ctx.moveTo(140 * S, 0);
         ctx.lineTo(-180 * S, 0);
         ctx.stroke();
       } else if (stationIndex === 2) {
-        // Station 3: The Itch (Iridescent shimmer on palm)
+        // Station 3: The Itch (Reflective Gold Palm with Iridescent Shimmer)
+        const handSize = 370 * S;
         if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
-          const handSize = 370 * S;
           ctx.drawImage(masterHandImg, -handSize / 2, -handSize / 2, handSize, handSize);
         }
-        // Shimmering iridescent ripple
+        // Molten gold iridescent ripple
         for (let ir = 0; ir < 4; ir++) {
           const ripR = ((subT * 22 + ir * 25) % 100) * S;
           const hue = (subT * 45 + ir * 60) % 360;
-          ctx.strokeStyle = "hsla(" + hue + ", 85%, 65%, 0.7)";
-          ctx.lineWidth = 2 * S;
+          ctx.strokeStyle = "hsla(" + hue + ", 90%, 70%, 0.75)";
+          ctx.lineWidth = 2.4 * S;
           ctx.beginPath();
           ctx.arc(20 * S, -10 * S, ripR, 0, Math.PI * 2);
           ctx.stroke();
         }
       } else if (stationIndex === 3) {
-        // Station 4: The Callus (Thickened skin, memory groove — NOT a shield)
+        // Station 4: The Callus (Burnished Gold Groove Engraved - NOT a shield)
+        const handSize = 370 * S;
         if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
-          const handSize = 370 * S;
           ctx.drawImage(masterHandImg, -handSize / 2, -handSize / 2, handSize, handSize);
         }
-        setGoldGlow(1.3);
-        ctx.strokeStyle = "#ffe9a8";
-        ctx.lineWidth = 2.6 * S;
+        // Embossed gold groove
+        ctx.strokeStyle = createReflectiveGoldGradient(0, -20 * S, 40 * S, 20 * S, localT);
+        ctx.lineWidth = 3.6 * S;
         ctx.beginPath();
         ctx.arc(15 * S, -8 * S, 34 * S, 0.4, 2.8);
         ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(22 * S, -2 * S, 54 * S, 0.6, 2.5);
-        ctx.stroke();
-        clearGlow();
+        drawGlint(36 * S, 12 * S, 20, 0.9);
       } else if (stationIndex === 3.5) {
-        // The Turn: Who? Question mark burning in gold
-        setGoldGlow(1.5);
-        ctx.fillStyle = "#ffe9a8";
-        ctx.font = (64 * S) + "px 'Cormorant Garamond', Georgia, serif";
+        // Question mark in polished gold
+        ctx.fillStyle = createReflectiveGoldGradient(-30 * S, -30 * S, 30 * S, 30 * S, localT);
+        ctx.font = (72 * S) + "px 'Cormorant Garamond', Georgia, serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText("?", 0, 0);
-        clearGlow();
+        drawGlint(10 * S, -20 * S, 28, 1.0);
       } else if (stationIndex === 4) {
-        // Station 5: The Pen in the Heart (The Pivot)
+        // Station 5: The Pen in the Heart (The Pivot - Luminous Gold Heart & Antique Gold Quill)
+        const heartSize = 390 * S;
         if (masterHeartImg.complete && masterHeartImg.naturalWidth > 0) {
-          const heartSize = 390 * S;
           ctx.drawImage(masterHeartImg, -heartSize / 2, -heartSize / 2, heartSize, heartSize);
         }
-        const hPulse = 1.0 + Math.sin(subT * 3.14) * 0.16;
-        ctx.strokeStyle = "rgba(232, 182, 76, 0.55)";
-        ctx.lineWidth = 1.6 * S;
+        // Reflective gold shockwave ring
+        const hPulse = 1.0 + Math.sin(subT * 3.14) * 0.18;
+        ctx.strokeStyle = createReflectiveGoldGradient(-160 * S, -160 * S, 160 * S, 160 * S, localT);
+        ctx.lineWidth = 2.4 * S;
         ctx.beginPath();
         ctx.arc(0, 0, 160 * S * hPulse, 0, Math.PI * 2);
         ctx.stroke();
+        drawGlint(-10 * S, -70 * S, 28, 1.0); // Pen nib flare
       } else if (stationIndex === 5) {
-        // Station 6: The Fork (Two paths in ink)
-        setGoldGlow(1.2);
-        ctx.strokeStyle = "#ffe9a8";
-        ctx.lineWidth = 3.2 * S;
+        // Station 6: The Fork (Two paths in molten gold)
+        ctx.strokeStyle = createReflectiveGoldGradient(-130 * S, -50 * S, 100 * S, 50 * S, localT);
+        ctx.lineWidth = 4 * S;
         ctx.beginPath();
         ctx.moveTo(-130 * S, 0);
         ctx.lineTo(-20 * S, 0);
@@ -1359,31 +1321,31 @@
         ctx.moveTo(-20 * S, 0);
         ctx.lineTo(95 * S, 75 * S);
         ctx.stroke();
-        clearGlow();
+        drawGlint(95 * S, -75 * S, 22, 0.9);
+        drawGlint(95 * S, 75 * S, 16, 0.6);
       } else {
-        // Station 7: The Road (Lines lift into 3D ground, pilgrim walking)
-        ctx.strokeStyle = "rgba(232, 182, 76, 0.55)";
-        ctx.lineWidth = 1.8 * S;
+        // Station 7: The Road (3D Golden Highway)
+        ctx.strokeStyle = createReflectiveGoldGradient(-240 * S, 0, 240 * S, 140 * S, localT);
+        ctx.lineWidth = 2.6 * S;
         ctx.beginPath();
         ctx.moveTo(-240 * S, 140 * S);
         ctx.lineTo(0, -60 * S);
         ctx.lineTo(240 * S, 140 * S);
         ctx.stroke();
+
         const walkX = Math.sin(subT * 1.5) * 60 * S;
-        ctx.fillStyle = "#ffe9a8";
+        ctx.fillStyle = createReflectiveGoldGradient(walkX - 8 * S, 30 * S, walkX + 8 * S, 70 * S, localT);
         ctx.beginPath();
-        ctx.arc(walkX, 40 * S, 6.5 * S, 0, Math.PI * 2);
+        ctx.arc(walkX, 40 * S, 7.5 * S, 0, Math.PI * 2);
         ctx.fill();
-        ctx.beginPath();
-        ctx.moveTo(walkX, 46 * S);
-        ctx.lineTo(walkX, 70 * S);
-        ctx.stroke();
+        ctx.fillRect(walkX - 2.5 * S, 48 * S, 5 * S, 24 * S);
+        drawGlint(walkX, 40 * S, 16, 0.85);
       }
 
       ctx.restore();
     }
 
-    // Shot 5: The Three Octaves
+    // Shot 5: Three Octaves (Reflective Brass Gyroscope & Lightning)
     function drawThreeOctaves(localT, alpha) {
       if (alpha <= 0.001) return;
       ctx.save();
@@ -1395,12 +1357,12 @@
       ctx.scale(portraitScale, portraitScale);
 
       if (localT < 30) {
-        // Gyroscope unceasing spin (Body)
+        // Reflective Brass & Gold Gyroscope (Body)
         const spinSpeed = localT * 4.5;
         ctx.save();
         ctx.rotate(spinSpeed);
-        ctx.strokeStyle = "#f59e0b";
-        ctx.lineWidth = 2.6 * S;
+        ctx.strokeStyle = createReflectiveGoldGradient(-160 * S, -160 * S, 160 * S, 160 * S, localT);
+        ctx.lineWidth = 3.4 * S;
         ctx.beginPath();
         ctx.arc(0, 0, 160 * S, 0, Math.PI * 2);
         ctx.stroke();
@@ -1410,25 +1372,24 @@
         ctx.stroke();
         ctx.restore();
 
-        // Steadying Golden Wisdom Ring (calms the wobble into grace)
-        setGoldGlow(1.4);
-        ctx.strokeStyle = "#ffe9a8";
-        ctx.lineWidth = 3.5 * S;
+        // Steadying Golden Wisdom Ring
+        ctx.strokeStyle = createReflectiveGoldGradient(-220 * S, -220 * S, 220 * S, 220 * S, localT * 1.5);
+        ctx.lineWidth = 4.5 * S;
         ctx.beginPath();
         ctx.arc(0, 0, 220 * S, 0, Math.PI * 2);
         ctx.stroke();
-        clearGlow();
+        drawGlint(Math.cos(localT * 2) * 220 * S, Math.sin(localT * 2) * 220 * S, 32, 1.0);
       } else {
         // Spirit Octave: Primeval darkness shattered by lightning
         const lightningT = localT - 30;
         const isFlash = lightningT > 4 && lightningT < 7;
 
         if (isFlash) {
-          ctx.fillStyle = "rgba(255, 255, 255, 0.88)";
+          ctx.fillStyle = "rgba(255, 255, 255, 0.92)";
           ctx.fillRect(-width, -height, width * 2, height * 2);
 
           ctx.strokeStyle = "#c084fc";
-          ctx.lineWidth = 3.8 * S;
+          ctx.lineWidth = 4.5 * S;
           ctx.beginPath();
           ctx.moveTo(0, -320 * S);
           ctx.lineTo(-40 * S, -160 * S);
@@ -1437,11 +1398,10 @@
           ctx.lineTo(0, 260 * S);
           ctx.stroke();
         } else {
-          // Yearning pulse in darkness
-          const yearnPulse = 1.0 + Math.sin(lightningT * 2) * 0.2;
-          ctx.fillStyle = "rgba(192, 132, 252, 0.5)";
+          const yearnPulse = 1.0 + Math.sin(lightningT * 2) * 0.25;
+          ctx.fillStyle = "rgba(192, 132, 252, 0.6)";
           ctx.beginPath();
-          ctx.arc(0, 0, 20 * S * yearnPulse, 0, Math.PI * 2);
+          ctx.arc(0, 0, 24 * S * yearnPulse, 0, Math.PI * 2);
           ctx.fill();
         }
       }
@@ -1449,7 +1409,7 @@
       ctx.restore();
     }
 
-    // Shot 6: Hold the Picture (The Frontispiece)
+    // Shot 6: Hold the Picture (Heavy Cast Gold Frontispiece Plate)
     function drawHoldThePicture(localT, alpha) {
       if (alpha <= 0.001) return;
       ctx.save();
@@ -1460,62 +1420,690 @@
       const portraitScale = isPortrait ? 0.74 : 1.0;
       ctx.scale(portraitScale, portraitScale);
 
-      // Engraved frontispiece book plate ornamental border
-      setGoldGlow(0.8);
-      ctx.strokeStyle = "rgba(232, 182, 76, 0.75)";
-      ctx.lineWidth = 2 * S;
-
       const bw = 380 * S;
       const bh = 540 * S;
-      ctx.strokeRect(-bw / 2, -bh / 2, bw, bh);
-      ctx.strokeRect(-bw / 2 + 10 * S, -bh / 2 + 10 * S, bw - 20 * S, bh - 20 * S);
 
-      // 4 Corner Cartouche Florets
+      // Heavy cast gold plate border
+      ctx.strokeStyle = createReflectiveGoldGradient(-bw / 2, -bh / 2, bw / 2, bh / 2, localT);
+      ctx.lineWidth = 3 * S;
+      ctx.strokeRect(-bw / 2, -bh / 2, bw, bh);
+
+      ctx.lineWidth = 1.6 * S;
+      ctx.strokeRect(-bw / 2 + 12 * S, -bh / 2 + 12 * S, bw - 24 * S, bh - 24 * S);
+
+      // 4 Corner Medallion Florets with diamond glints
       [
-        [-bw / 2 + 10 * S, -bh / 2 + 10 * S],
-        [bw / 2 - 10 * S, -bh / 2 + 10 * S],
-        [-bw / 2 + 10 * S, bh / 2 - 10 * S],
-        [bw / 2 - 10 * S, bh / 2 - 10 * S]
-      ].forEach(([fx, fy]) => {
+        [-bw / 2 + 12 * S, -bh / 2 + 12 * S],
+        [bw / 2 - 12 * S, -bh / 2 + 12 * S],
+        [-bw / 2 + 12 * S, bh / 2 - 12 * S],
+        [bw / 2 - 12 * S, bh / 2 - 12 * S]
+      ].forEach(([fx, fy], idx) => {
+        ctx.fillStyle = createReflectiveGoldGradient(fx - 10 * S, fy - 10 * S, fx + 10 * S, fy + 10 * S, localT + idx);
         ctx.beginPath();
-        ctx.arc(fx, fy, 8 * S, 0, Math.PI * 2);
-        ctx.stroke();
+        ctx.arc(fx, fy, 10 * S, 0, Math.PI * 2);
+        ctx.fill();
+        drawGlint(fx, fy, 14, 0.85);
       });
 
       // Three turning rings inside plate
       const rings = [
-        { r: 150 * S, color: "rgba(96, 165, 250, 0.7)" },
-        { r: 105 * S, color: "rgba(245, 158, 11, 0.7)" },
-        { r: 60 * S, color: "rgba(192, 132, 252, 0.7)" }
+        { r: 150 * S, color: "#60a5fa" },
+        { r: 105 * S, color: "#f59e0b" },
+        { r: 60 * S, color: "#c084fc" }
       ];
       rings.forEach(ring => {
         ctx.strokeStyle = ring.color;
-        ctx.lineWidth = 1.3 * S;
+        ctx.lineWidth = 1.6 * S;
         ctx.beginPath();
         ctx.arc(0, -20 * S, ring.r, 0, Math.PI * 2);
         ctx.stroke();
       });
 
       // Central Golden Choice
-      ctx.fillStyle = "#ffe9a8";
+      ctx.fillStyle = createReflectiveGoldGradient(-12 * S, -32 * S, 12 * S, -8 * S, localT);
       ctx.beginPath();
-      ctx.arc(0, -20 * S, 9 * S, 0, Math.PI * 2);
+      ctx.arc(0, -20 * S, 12 * S, 0, Math.PI * 2);
       ctx.fill();
+      drawGlint(0, -20 * S, 24, 1.0);
 
-      // Pilgrim road leading down to bottom edge of manuscript
-      ctx.strokeStyle = "rgba(232, 182, 76, 0.5)";
-      ctx.lineWidth = 1.4 * S;
+      // Pilgrim road leading down to edge of manuscript
+      ctx.strokeStyle = createReflectiveGoldGradient(0, 40 * S, 0, bh / 2 - 12 * S, localT);
+      ctx.lineWidth = 2 * S;
       ctx.beginPath();
       ctx.moveTo(0, 40 * S);
-      ctx.lineTo(0, bh / 2 - 10 * S);
+      ctx.lineTo(0, bh / 2 - 12 * S);
       ctx.stroke();
 
-      clearGlow();
       ctx.restore();
     }
 
-    // Generic Illuminated Scaffolding Renderer for Episodes 1-6
-    function drawManuscriptPlaceholder(shot, localT, alpha) {
+    // --- EPISODE 1: THE EYE AND THE HAND (Reflective Gold Pieces) ---
+
+    // Ep 1 Shot 1: The Eye (Macro Close-Up Solid Gold Medallion)
+    function drawEp1Shot1(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Heavy cast gold plate base
+      const eyeR = 260 * S;
+      ctx.fillStyle = createReflectiveGoldGradient(-eyeR, -eyeR, eyeR, eyeR, localT);
+      ctx.beginPath();
+      ctx.arc(0, 0, eyeR + 15 * S, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Recessed inner plate
+      ctx.fillStyle = "#040914";
+      ctx.beginPath();
+      ctx.arc(0, 0, eyeR, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Masterwork Eye asset
+      if (masterEyeImg.complete && masterEyeImg.naturalWidth > 0) {
+        const eyeSize = 460 * S;
+        ctx.drawImage(masterEyeImg, -eyeSize / 2, -eyeSize / 2, eyeSize, eyeSize);
+      }
+
+      // Polished gold astrolabe gears with burin rays
+      ctx.strokeStyle = createReflectiveGoldGradient(-eyeR, -eyeR, eyeR, eyeR, localT * 0.8);
+      ctx.lineWidth = 3.6 * S;
+      ctx.beginPath();
+      ctx.arc(0, 0, eyeR, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Slow specular glint sweeping across the polished golden iris
+      const glintA = localT * 0.4;
+      const gx = Math.cos(glintA) * 110 * S;
+      const gy = Math.sin(glintA) * 70 * S;
+      drawGlint(gx, gy, 32, 0.95);
+
+      ctx.restore();
+    }
+
+    // Ep 1 Shot 2: The Hand (Sculpted Reflective Gold Anatomical Hand - NO BEACON)
+    function drawEp1Shot2(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Reach into pure darkness: hand extends into void
+      const reachProgress = Math.min(localT / 45, 1.0);
+      const reachX = (reachProgress * 90 - 45) * S;
+
+      // Solid gold anatomical hand
+      const handSize = 480 * S;
+      if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
+        ctx.drawImage(masterHandImg, -handSize / 2 + reachX, -handSize / 2, handSize, handSize);
+      }
+
+      // Specular highlights on fingertips as they probe the unknown dark
+      const f1x = reachX + 45 * S;
+      const f1y = -135 * S;
+      drawGlint(f1x, f1y, 22, 0.85);
+
+      // Fructifying light: liquid gold flowing back along reach
+      const flowProgress = (localT * 0.3) % 1.0;
+      ctx.strokeStyle = createReflectiveGoldGradient(f1x, f1y, -260 * S, 40 * S, localT);
+      ctx.lineWidth = 2.8 * S;
+      ctx.beginPath();
+      ctx.moveTo(f1x, f1y);
+      ctx.lineTo(-260 * S, 40 * S);
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    // Ep 1 Shot 3: The Veil Between (Filigree Curtain with Gold Thread)
+    function drawEp1Shot3(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Left: Eye emblem in gold
+      ctx.fillStyle = createReflectiveGoldGradient(-260 * S, -50 * S, -160 * S, 50 * S, localT);
+      ctx.beginPath();
+      ctx.arc(-210 * S, 0, 48 * S, 0, Math.PI * 2);
+      ctx.fill();
+      drawGlint(-210 * S, 0, 20, 0.9);
+
+      // Right: Hand emblem in gold
+      ctx.fillStyle = createReflectiveGoldGradient(160 * S, -50 * S, 260 * S, 50 * S, localT);
+      ctx.beginPath();
+      ctx.arc(210 * S, 0, 48 * S, 0, Math.PI * 2);
+      ctx.fill();
+      drawGlint(210 * S, 0, 20, 0.9);
+
+      // Center: Drifting dark veil curtain with golden vertical ribs
+      for (let k = -2; k <= 2; k++) {
+        const vx = k * 35 * S + Math.sin(localT * 0.8 + k) * 15 * S;
+        ctx.strokeStyle = createReflectiveGoldGradient(vx, -220 * S, vx, 220 * S, localT + k);
+        ctx.lineWidth = 2 * S;
+        ctx.setLineDash([8 * S, 6 * S]);
+        ctx.beginPath();
+        ctx.moveTo(vx, -220 * S);
+        ctx.lineTo(vx, 220 * S);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+
+      // Connecting golden thread of tension
+      const tugY = Math.sin(localT * 2) * 12 * S;
+      ctx.strokeStyle = createReflectiveGoldGradient(-210 * S, 0, 210 * S, 0, localT);
+      ctx.lineWidth = 3.2 * S;
+      ctx.beginPath();
+      ctx.moveTo(-210 * S, 0);
+      ctx.quadraticCurveTo(0, tugY, 210 * S, 0);
+      ctx.stroke();
+      drawGlint(0, tugY, 26, 1.0);
+
+      ctx.restore();
+    }
+
+    // Ep 1 Shot 4: You Are Both (Merged Gold Eyelid & Drawing Desk)
+    function drawEp1Shot4(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      if (localT < 35) {
+        // Closed sculpted golden eyelid with inner burning ember
+        ctx.strokeStyle = createReflectiveGoldGradient(-180 * S, 0, 180 * S, 0, localT);
+        ctx.lineWidth = 4 * S;
+        ctx.beginPath();
+        ctx.arc(0, -60 * S, 140 * S, 0.3, Math.PI - 0.3);
+        ctx.stroke();
+
+        // Inner golden ember pulse
+        const emberPulse = 1.0 + Math.sin(localT * 2.5) * 0.2;
+        ctx.fillStyle = createReflectiveGoldGradient(-20 * S, 10 * S, 20 * S, 50 * S, localT);
+        ctx.beginPath();
+        ctx.arc(0, 30 * S, 16 * S * emberPulse, 0, Math.PI * 2);
+        ctx.fill();
+        drawGlint(0, 30 * S, 24, 0.95);
+      } else {
+        // Gilded pen resting on drawing desk
+        const deskT = localT - 35;
+        // Manuscript paper in gold frame
+        ctx.strokeStyle = createReflectiveGoldGradient(-160 * S, -120 * S, 160 * S, 120 * S, localT);
+        ctx.lineWidth = 2.4 * S;
+        ctx.strokeRect(-150 * S, -100 * S, 300 * S, 200 * S);
+
+        // Reflective gold quill pen
+        ctx.save();
+        ctx.rotate(-0.4);
+        ctx.fillStyle = createReflectiveGoldGradient(-120 * S, 0, 120 * S, 0, localT);
+        ctx.fillRect(-110 * S, -4 * S, 220 * S, 8 * S);
+        drawGlint(110 * S, 0, 24, 1.0); // Pen nib
+        ctx.restore();
+      }
+
+      ctx.restore();
+    }
+
+    // --- EPISODE 2: THE ITCH AND THE CALLUS ---
+
+    // Ep 2 Shot 1: Contact
+    function drawEp2Shot1(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      const handSize = 440 * S;
+      if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
+        ctx.drawImage(masterHandImg, -handSize / 2, -handSize / 2, handSize, handSize);
+      }
+
+      // Liquid gold iridescent shimmer blooming across palm
+      for (let i = 0; i < 5; i++) {
+        const ripR = ((localT * 24 + i * 28) % 130) * S;
+        const hue = (localT * 50 + i * 70) % 360;
+        ctx.strokeStyle = "hsla(" + hue + ", 90%, 70%, 0.8)";
+        ctx.lineWidth = 2.6 * S;
+        ctx.beginPath();
+        ctx.arc(24 * S, -12 * S, ripR, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      drawGlint(24 * S, -12 * S, 32, 1.0);
+
+      ctx.restore();
+    }
+
+    // Ep 2 Shot 2: The Answer (Toward vs Away Ghost Hands)
+    function drawEp2Shot2(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Hand A (Toward: Opening in golden light)
+      ctx.save();
+      ctx.translate(-140 * S, 0);
+      ctx.globalAlpha = alpha * 0.9;
+      if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
+        const handSize = 340 * S;
+        ctx.drawImage(masterHandImg, -handSize / 2, -handSize / 2, handSize, handSize);
+      }
+      drawGlint(20 * S, -10 * S, 28, 1.0);
+      ctx.restore();
+
+      // Hand B (Away: Closing in dark bronze armor)
+      ctx.save();
+      ctx.translate(140 * S, 0);
+      ctx.globalAlpha = alpha * 0.6;
+      ctx.fillStyle = "rgba(120, 53, 15, 0.4)";
+      ctx.fillRect(-80 * S, -80 * S, 160 * S, 160 * S);
+      if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
+        const handSize = 340 * S;
+        ctx.drawImage(masterHandImg, -handSize / 2, -handSize / 2, handSize, handSize);
+      }
+      ctx.restore();
+
+      ctx.restore();
+    }
+
+    // Ep 2 Shot 3: The Callus (Gold Inlaid Enamel - RECORD, NEVER ARMOR)
+    function drawEp2Shot3(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      const handSize = 440 * S;
+      if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
+        ctx.drawImage(masterHandImg, -handSize / 2, -handSize / 2, handSize, handSize);
+      }
+
+      // Engraved gold grooves wearing deeper
+      ctx.strokeStyle = createReflectiveGoldGradient(-40 * S, -40 * S, 60 * S, 60 * S, localT);
+      ctx.lineWidth = 4 * S;
+      ctx.beginPath();
+      ctx.arc(18 * S, -8 * S, 38 * S, 0.4, 2.8);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(26 * S, 2 * S, 58 * S, 0.6, 2.5);
+      ctx.stroke();
+
+      // Shimmer still lands (records, never shields)
+      const shimmerR = ((localT * 30) % 70) * S;
+      ctx.strokeStyle = "rgba(255, 233, 168, 0.75)";
+      ctx.lineWidth = 2 * S;
+      ctx.beginPath();
+      ctx.arc(18 * S, -8 * S, shimmerR, 0, Math.PI * 2);
+      ctx.stroke();
+
+      drawGlint(18 * S, -8 * S, 26, 0.95);
+
+      ctx.restore();
+    }
+
+    // Ep 2 Shot 4: What Sinks (Sunken Gold Stones in Dark Water Basement)
+    function drawEp2Shot4(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Deep dark water gradient
+      const waterGrad = ctx.createLinearGradient(0, -260 * S, 0, 260 * S);
+      waterGrad.addColorStop(0, "rgba(8, 17, 34, 0.1)");
+      waterGrad.addColorStop(0.7, "rgba(4, 9, 20, 0.85)");
+      waterGrad.addColorStop(1, "rgba(2, 4, 10, 0.98)");
+      ctx.fillStyle = waterGrad;
+      ctx.fillRect(-width / 2, -260 * S, width, 520 * S);
+
+      // Heavy golden stones sinking downward
+      for (let s = 0; s < 5; s++) {
+        const fallOffset = ((localT * 26 + s * 90) % 480) * S - 200 * S;
+        const sx = (s - 2) * 85 * S + Math.sin(localT + s) * 15 * S;
+        ctx.fillStyle = createReflectiveGoldGradient(sx - 18 * S, fallOffset - 14 * S, sx + 18 * S, fallOffset + 14 * S, localT + s);
+        ctx.beginPath();
+        ctx.roundRect(sx - 18 * S, fallOffset - 14 * S, 36 * S, 28 * S, 6 * S);
+        ctx.fill();
+        drawGlint(sx, fallOffset, 16, 0.8);
+      }
+
+      ctx.restore();
+    }
+
+    // Ep 2 Shot 5: The Diary
+    function drawEp2Shot5(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Gilded Manuscript Diary Plate
+      const dw = 360 * S;
+      const dh = 480 * S;
+      ctx.strokeStyle = createReflectiveGoldGradient(-dw / 2, -dh / 2, dw / 2, dh / 2, localT);
+      ctx.lineWidth = 3 * S;
+      ctx.strokeRect(-dw / 2, -dh / 2, dw, dh);
+
+      // Left: Itch bloom drawing
+      ctx.strokeStyle = "rgba(255, 233, 168, 0.85)";
+      ctx.lineWidth = 2 * S;
+      ctx.beginPath();
+      ctx.arc(-80 * S, -40 * S, 35 * S, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Right: Callus ridge drawing
+      ctx.beginPath();
+      ctx.arc(80 * S, -40 * S, 35 * S, 0.5, 2.6);
+      ctx.stroke();
+
+      drawGlint(-80 * S, -40 * S, 20, 0.9);
+      drawGlint(80 * S, -40 * S, 20, 0.9);
+
+      ctx.restore();
+    }
+
+    // --- EPISODE 3: THE PEN IN THE HEART ---
+
+    // Ep 3 Shot 1: Who?
+    function drawEp3Shot1(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // 4 fading miniature gold medallions (Eye, Hand, Itch, Callus)
+      const fadeProgress = Math.min(localT / 40, 1.0);
+      const medAlpha = Math.max(0, 1.0 - fadeProgress);
+
+      if (medAlpha > 0.01) {
+        ctx.save();
+        ctx.globalAlpha = alpha * medAlpha;
+        [-180, -60, 60, 180].forEach((mx, idx) => {
+          ctx.fillStyle = createReflectiveGoldGradient((mx - 30) * S, -30 * S, (mx + 30) * S, 30 * S, localT);
+          ctx.beginPath();
+          ctx.arc(mx * S, -60 * S, 32 * S, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        ctx.restore();
+      }
+
+      // Central Burning Gold Question Mark
+      const qAlpha = Math.min(localT / 25, 1.0);
+      ctx.save();
+      ctx.globalAlpha = alpha * qAlpha;
+      ctx.fillStyle = createReflectiveGoldGradient(-40 * S, -40 * S, 40 * S, 40 * S, localT);
+      ctx.font = (88 * S) + "px 'Cormorant Garamond', Georgia, serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("?", 0, 40 * S);
+      drawGlint(16 * S, 10 * S, 36, 1.0);
+      ctx.restore();
+
+      ctx.restore();
+    }
+
+    // Ep 3 Shot 2: The Reveal (THE PIVOT: Rooted Gold Pen in Beating Heart)
+    function drawEp3Shot2(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Camera pushes in slowly to reveal ("It was you all along")
+      const zoom = 1.0 + Math.min(localT / 70, 1.0) * 0.25;
+      ctx.scale(zoom, zoom);
+
+      // Luminous beating heart & rooted antique pen
+      const heartSize = 420 * S;
+      if (masterHeartImg.complete && masterHeartImg.naturalWidth > 0) {
+        ctx.drawImage(masterHeartImg, -heartSize / 2, -heartSize / 2, heartSize, heartSize);
+      }
+
+      // Systolic pulse ring in reflective gold
+      const hPulse = 1.0 + Math.sin(localT * 3.14) * 0.18;
+      ctx.strokeStyle = createReflectiveGoldGradient(-180 * S, -180 * S, 180 * S, 180 * S, localT);
+      ctx.lineWidth = 3.2 * S;
+      ctx.beginPath();
+      ctx.arc(0, 0, 180 * S * hPulse, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Specular flare on the rooted gold nib
+      drawGlint(-10 * S, -75 * S, 38, 1.0);
+
+      ctx.restore();
+    }
+
+    // Ep 3 Shot 3: The Will to Know
+    function drawEp3Shot3(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Two identical rooms side by side
+      const rw = 200 * S;
+      const rh = 280 * S;
+
+      // Room A (Left)
+      ctx.strokeStyle = createReflectiveGoldGradient(-250 * S, -rh / 2, -50 * S, rh / 2, localT);
+      ctx.lineWidth = 2.4 * S;
+      ctx.strokeRect(-250 * S, -rh / 2, rw, rh);
+      drawGlint(-150 * S, 0, 24, 0.9);
+
+      // Room B (Right)
+      ctx.strokeStyle = createReflectiveGoldGradient(50 * S, -rh / 2, 250 * S, rh / 2, localT);
+      ctx.strokeRect(50 * S, -rh / 2, rw, rh);
+      drawGlint(150 * S, 0, 24, 0.9);
+
+      ctx.restore();
+    }
+
+    // Ep 3 Shot 4: The Heart (Chest Shockwave Rings)
+    function drawEp3Shot4(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Expanding golden pulse waves from heart
+      for (let r = 1; r <= 4; r++) {
+        const pr = ((localT * 35 + r * 60) % 240) * S;
+        ctx.strokeStyle = createReflectiveGoldGradient(-pr, -pr, pr, pr, localT + r);
+        ctx.lineWidth = 2.4 * S;
+        ctx.beginPath();
+        ctx.arc(0, 0, pr, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      const heartSize = 340 * S;
+      if (masterHeartImg.complete && masterHeartImg.naturalWidth > 0) {
+        ctx.drawImage(masterHeartImg, -heartSize / 2, -heartSize / 2, heartSize, heartSize);
+      }
+      drawGlint(0, 0, 32, 1.0);
+
+      ctx.restore();
+    }
+
+    // --- EPISODE 4: THE FORK AND THE ROAD ---
+
+    // Ep 4 Shot 1: The Writing (Ink line splits)
+    function drawEp4Shot1(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Flowing golden ink line splitting into two paths
+      ctx.strokeStyle = createReflectiveGoldGradient(-220 * S, 0, 180 * S, 0, localT);
+      ctx.lineWidth = 4.5 * S;
+      ctx.beginPath();
+      ctx.moveTo(-220 * S, 0);
+      ctx.lineTo(-40 * S, 0);
+      // Diverging fork
+      ctx.lineTo(160 * S, -90 * S);
+      ctx.moveTo(-40 * S, 0);
+      ctx.lineTo(160 * S, 90 * S);
+      ctx.stroke();
+
+      drawGlint(-40 * S, 0, 30, 1.0);
+      drawGlint(160 * S, -90 * S, 24, 0.95);
+      drawGlint(160 * S, 90 * S, 18, 0.6);
+
+      ctx.restore();
+    }
+
+    // Ep 4 Shot 2: The Remaking (Before & After Pens in Polished Gold)
+    function drawEp4Shot2(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Left Pen: Heavy original pen
+      ctx.save();
+      ctx.translate(-140 * S, 0);
+      ctx.fillStyle = createReflectiveGoldGradient(-10 * S, -120 * S, 10 * S, 120 * S, localT);
+      ctx.fillRect(-8 * S, -110 * S, 16 * S, 220 * S);
+      drawGlint(0, -110 * S, 20, 0.7);
+      ctx.restore();
+
+      // Right Pen: Transmuted & Remade Pen (Finer White-Gold Filigree Nib)
+      ctx.save();
+      ctx.translate(140 * S, 0);
+      ctx.fillStyle = createReflectiveGoldGradient(-6 * S, -130 * S, 6 * S, 130 * S, localT * 1.5);
+      ctx.fillRect(-5 * S, -120 * S, 10 * S, 240 * S);
+      drawGlint(0, -120 * S, 32, 1.0); // Brilliant white-gold flare
+      ctx.restore();
+
+      ctx.restore();
+    }
+
+    // Ep 4 Shot 3: The Road (Lines lift into 3D Gold Terrain)
+    function drawEp4Shot3(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // 3D Isometric Gold Highway
+      ctx.strokeStyle = createReflectiveGoldGradient(-280 * S, 150 * S, 280 * S, -80 * S, localT);
+      ctx.lineWidth = 3.6 * S;
+      ctx.beginPath();
+      ctx.moveTo(-280 * S, 160 * S);
+      ctx.lineTo(0, -80 * S);
+      ctx.lineTo(280 * S, 160 * S);
+      ctx.stroke();
+
+      // Golden pilgrim walking
+      const walkT = (localT * 1.4) % 10;
+      const pilgrimX = Math.sin(localT * 0.8) * 80 * S;
+      const pilgrimY = 40 * S + Math.cos(localT * 0.8) * 20 * S;
+
+      ctx.fillStyle = createReflectiveGoldGradient(pilgrimX - 8 * S, pilgrimY - 8 * S, pilgrimX + 8 * S, pilgrimY + 24 * S, localT);
+      ctx.beginPath();
+      ctx.arc(pilgrimX, pilgrimY, 8 * S, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillRect(pilgrimX - 3 * S, pilgrimY + 8 * S, 6 * S, 22 * S);
+      drawGlint(pilgrimX, pilgrimY, 18, 0.85);
+
+      ctx.restore();
+    }
+
+    // Ep 4 Shot 4: Your Ground
+    function drawEp4Shot4(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.76 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Expansive manuscript ground
+      const gw = 420 * S;
+      const gh = 320 * S;
+      ctx.strokeStyle = createReflectiveGoldGradient(-gw / 2, -gh / 2, gw / 2, gh / 2, localT);
+      ctx.lineWidth = 2.8 * S;
+      ctx.strokeRect(-gw / 2, -gh / 2, gw, gh);
+
+      drawGlint(0, 0, 28, 0.95);
+
+      ctx.restore();
+    }
+
+    
+    // =========================================================================
+    // --- EPISODE 5: THE VEIL AND THE DEEP MIND (Reflective Gilded Masterwork) ---
+    // =========================================================================
+
+    // Ep 5 Shot 1: The House (Three Depths)
+    function drawEp5Shot1(localT, alpha) {
       if (alpha <= 0.001) return;
       ctx.save();
       ctx.globalAlpha = alpha;
@@ -1525,62 +2113,909 @@
       const portraitScale = isPortrait ? 0.74 : 1.0;
       ctx.scale(portraitScale, portraitScale);
 
-      setGoldGlow(0.8);
-      ctx.strokeStyle = "rgba(232, 182, 76, 0.4)";
-      ctx.lineWidth = 1.4 * S;
+      // Camera pan tracking downwards into depth as localT progresses
+      const panY = -60 * S + Math.min(1, localT / 65) * 110 * S;
+      ctx.translate(0, -panY);
 
+      const hw = 360 * S;
+      const hh = 520 * S;
+      const halfW = hw / 2;
+      const halfH = hh / 2;
+
+      // Heavy Cast Gold Outer Arch / Temple Facade
+      ctx.strokeStyle = createReflectiveGoldGradient(-halfW, -halfH, halfW, halfH, localT);
+      ctx.lineWidth = 4 * S;
+      ctx.strokeRect(-halfW, -halfH, hw, hh);
+
+      // Pediment / Cornice at top
       ctx.beginPath();
-      ctx.arc(0, 0, 180 * S, 0, Math.PI * 2);
+      ctx.moveTo(-halfW - 20 * S, -halfH);
+      ctx.lineTo(0, -halfH - 55 * S);
+      ctx.lineTo(halfW + 20 * S, -halfH);
+      ctx.closePath();
+      ctx.fillStyle = createReflectiveGoldGradient(-halfW, -halfH - 55 * S, halfW, -halfH, localT);
+      ctx.fill();
+      ctx.stroke();
+      drawGlint(0, -halfH - 55 * S, 28, 0.95);
+
+      // --- FLOOR 1: CONSCIOUS MIND (Top Floor, bright, thoughts arrive) ---
+      const f1Y = -halfH + 15 * S;
+      const f1H = 150 * S;
+      const f1Grad = ctx.createLinearGradient(0, f1Y, 0, f1Y + f1H);
+      f1Grad.addColorStop(0, "rgba(255, 245, 215, 0.22)");
+      f1Grad.addColorStop(1, "rgba(232, 182, 76, 0.08)");
+      ctx.fillStyle = f1Grad;
+      ctx.fillRect(-halfW + 8 * S, f1Y, hw - 16 * S, f1H);
+
+      // Classical Ionic Pillars
+      [-halfW + 28 * S, halfW - 28 * S].forEach(px => {
+        ctx.strokeStyle = createReflectiveGoldGradient(px - 10 * S, f1Y, px + 10 * S, f1Y + f1H, localT);
+        ctx.lineWidth = 3 * S;
+        ctx.strokeRect(px - 8 * S, f1Y + 10 * S, 16 * S, f1H - 20 * S);
+      });
+
+      // Gilded Writing Desk & Quill Pen
+      ctx.save();
+      ctx.translate(0, f1Y + f1H - 35 * S);
+      ctx.fillStyle = createReflectiveGoldGradient(-60 * S, -10 * S, 60 * S, 10 * S, localT);
+      ctx.fillRect(-55 * S, -8 * S, 110 * S, 16 * S);
+      ctx.strokeRect(-55 * S, -8 * S, 110 * S, 16 * S);
+
+      // Open manuscript scroll on desk
+      ctx.fillStyle = "#fff8eb";
+      ctx.fillRect(-28 * S, -18 * S, 56 * S, 10 * S);
+
+      // Golden quill pen standing in inkwell
+      ctx.strokeStyle = createReflectiveGoldGradient(15 * S, -40 * S, 25 * S, -10 * S, localT);
+      ctx.lineWidth = 2.4 * S;
+      ctx.beginPath();
+      ctx.moveTo(22 * S, -12 * S);
+      ctx.lineTo(34 * S, -46 * S);
+      ctx.stroke();
+      drawGlint(34 * S, -46 * S, 20, 0.9);
+      ctx.restore();
+
+      // Divider Floor 1 -> 2
+      ctx.strokeStyle = createReflectiveGoldGradient(-halfW, f1Y + f1H, halfW, f1Y + f1H, localT);
+      ctx.lineWidth = 3.5 * S;
+      ctx.beginPath();
+      ctx.moveTo(-halfW, f1Y + f1H);
+      ctx.lineTo(halfW, f1Y + f1H);
       ctx.stroke();
 
-      ctx.beginPath();
-      ctx.arc(0, 0, 120 * S, 0, Math.PI * 2);
-      ctx.stroke();
+      // --- FLOOR 2: SUBCONSCIOUS (Middle Floor, warmer, dreams, the reach) ---
+      const f2Y = f1Y + f1H;
+      const f2H = 160 * S;
+      const f2Grad = ctx.createLinearGradient(0, f2Y, 0, f2Y + f2H);
+      f2Grad.addColorStop(0, "rgba(217, 119, 6, 0.18)");
+      f2Grad.addColorStop(1, "rgba(120, 53, 15, 0.28)");
+      ctx.fillStyle = f2Grad;
+      ctx.fillRect(-halfW + 8 * S, f2Y, hw - 16 * S, f2H);
 
-      for (let i = 0; i < 12; i++) {
-        const rad = (i / 12) * Math.PI * 2 + localT * 0.02;
+      // Vaulted Gothic Arches
+      ctx.strokeStyle = "rgba(232, 182, 76, 0.55)";
+      ctx.lineWidth = 2 * S;
+      for (let i = -1; i <= 1; i++) {
         ctx.beginPath();
-        ctx.moveTo(Math.cos(rad) * 60 * S, Math.sin(rad) * 60 * S);
-        ctx.lineTo(Math.cos(rad) * 180 * S, Math.sin(rad) * 180 * S);
+        ctx.arc(i * 100 * S, f2Y + f2H, 70 * S, Math.PI, 0);
         ctx.stroke();
       }
 
-      if (shot.ep === 1) {
-        if (masterEyeImg.complete && masterEyeImg.naturalWidth > 0) {
-          const eyeS = 180 * S;
-          ctx.drawImage(masterEyeImg, -eyeS / 2, -eyeS / 2, eyeS, eyeS);
-        }
-      } else if (shot.ep === 2) {
-        if (masterHandImg.complete && masterHandImg.naturalWidth > 0) {
-          const handS = 200 * S;
-          ctx.drawImage(masterHandImg, -handS / 2, -handS / 2, handS, handS);
-        }
-      } else if (shot.ep === 3 || shot.ep === 4) {
-        if (masterHeartImg.complete && masterHeartImg.naturalWidth > 0) {
-          const heartS = 210 * S;
-          ctx.drawImage(masterHeartImg, -heartS / 2, -heartS / 2, heartS, heartS);
-        }
-      } else {
-        const p = 1.0 + Math.sin(localT * 2) * 0.15;
-        ctx.fillStyle = "#ffe9a8";
+      // Golden hand silhouette reaching upward from depths
+      ctx.save();
+      ctx.translate(0, f2Y + 95 * S);
+      ctx.scale(0.38 * S, 0.38 * S);
+      ctx.drawImage(masterHandImg, -masterHandImg.width / 2, -masterHandImg.height / 2);
+      ctx.restore();
+
+      // --- THE THRESHOLD / VEIL (Heavy celestial curtain and locked gate) ---
+      const f3Y = f2Y + f2H;
+      ctx.strokeStyle = createReflectiveGoldGradient(-halfW, f3Y, halfW, f3Y, localT);
+      ctx.lineWidth = 5 * S;
+      ctx.beginPath();
+      ctx.moveTo(-halfW, f3Y);
+      ctx.lineTo(halfW, f3Y);
+      ctx.stroke();
+
+      // Filigree Curtain Mesh
+      ctx.strokeStyle = "rgba(255, 233, 168, 0.7)";
+      ctx.lineWidth = 1.4 * S;
+      for (let x = -halfW + 15 * S; x < halfW - 10 * S; x += 18 * S) {
         ctx.beginPath();
-        ctx.arc(0, 0, 12 * S * p, 0, Math.PI * 2);
+        ctx.moveTo(x, f3Y - 14 * S);
+        ctx.lineTo(x + 10 * S, f3Y + 14 * S);
+        ctx.stroke();
+      }
+      // Central Gate Medallion with Lock
+      ctx.fillStyle = createReflectiveGoldGradient(-18 * S, f3Y - 18 * S, 18 * S, f3Y + 18 * S, localT);
+      ctx.beginPath();
+      ctx.arc(0, f3Y, 18 * S, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      drawGlint(0, f3Y, 24, 0.95);
+
+      // --- FLOOR 3: DEEP MIND (Bottom Floor, the blueprint room, 22 lights) ---
+      const f3H = hh - (f1H + f2H) - 15 * S;
+      const f3Grad = ctx.createLinearGradient(0, f3Y, 0, f3Y + f3H);
+      f3Grad.addColorStop(0, "rgba(5, 11, 22, 0.85)");
+      f3Grad.addColorStop(1, "rgba(2, 6, 14, 0.98)");
+      ctx.fillStyle = f3Grad;
+      ctx.fillRect(-halfW + 8 * S, f3Y, hw - 16 * S, f3H);
+
+      // Cyan / Gold blueprint construction grid
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.22)";
+      ctx.lineWidth = 1 * S;
+      for (let y = f3Y + 20 * S; y < f3Y + f3H - 10 * S; y += 22 * S) {
+        ctx.beginPath();
+        ctx.moveTo(-halfW + 16 * S, y);
+        ctx.lineTo(halfW - 16 * S, y);
+        ctx.stroke();
+      }
+      for (let x = -halfW + 25 * S; x < halfW - 20 * S; x += 30 * S) {
+        ctx.beginPath();
+        ctx.moveTo(x, f3Y + 10 * S);
+        ctx.lineTo(x, f3Y + f3H - 10 * S);
+        ctx.stroke();
+      }
+
+      // The 22 Lights glowing as miniature golden stars in three tiers
+      const lights = [
+        { count: 7, r: 40 * S, yOff: f3Y + 70 * S, color: "#38bdf8" }, // Sapphire (Mind)
+        { count: 7, r: 80 * S, yOff: f3Y + 70 * S, color: "#f59e0b" }, // Amber (Body)
+        { count: 7, r: 120 * S, yOff: f3Y + 70 * S, color: "#c084fc" } // Violet (Spirit)
+      ];
+      lights.forEach(tier => {
+        for (let i = 0; i < tier.count; i++) {
+          const ang = Math.PI + (i / (tier.count - 1)) * Math.PI;
+          const lx = Math.cos(ang) * tier.r;
+          const ly = tier.yOff + Math.sin(ang) * (tier.r * 0.45);
+          ctx.fillStyle = tier.color;
+          ctx.beginPath();
+          ctx.arc(lx, ly, 3.2 * S, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+      // Center golden Choice light
+      ctx.fillStyle = "#ffe9a8";
+      ctx.beginPath();
+      ctx.arc(0, f3Y + 70 * S, 6 * S, 0, Math.PI * 2);
+      ctx.fill();
+      drawGlint(0, f3Y + 70 * S, 20, 0.9);
+
+      ctx.restore();
+    }
+
+    // Ep 5 Shot 2: The Veil Drops (Cosmic Membrane & Crystallization)
+    function drawEp5Shot2(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.74 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      const rMind = 250 * S;
+      const rBody = 180 * S;
+      const rSpirit = 110 * S;
+
+      // Draw Three Circular Rings
+      [
+        { r: rMind, col: "#38bdf8" },
+        { r: rBody, col: "#f59e0b" },
+        { r: rSpirit, col: "#c084fc" }
+      ].forEach((ring, idx) => {
+        ctx.strokeStyle = createReflectiveGoldGradient(-ring.r, -ring.r, ring.r, ring.r, localT + idx);
+        ctx.lineWidth = 2.4 * S;
+        ctx.beginPath();
+        ctx.arc(0, 0, ring.r, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      // Phase 1 (localT < 18): Primordial 9 Lights in unbroken harmony
+      // Phase 2 (localT >= 18): The veil descends and 13 new lights crystallize to 22
+      const veilProgress = Math.max(0, Math.min(1, (localT - 18) / 22));
+
+      // Draw Veil Curtain
+      if (veilProgress > 0) {
+        ctx.save();
+        const curtainH = veilProgress * 600 * S;
+        const curtainY = -300 * S;
+        const veilGrad = ctx.createLinearGradient(0, curtainY, 0, curtainY + curtainH);
+        veilGrad.addColorStop(0, "rgba(5, 11, 22, 0.95)");
+        veilGrad.addColorStop(0.5, "rgba(232, 182, 76, 0.45)");
+        veilGrad.addColorStop(1, "rgba(255, 233, 168, 0.85)");
+        ctx.fillStyle = veilGrad;
+        ctx.fillRect(-22 * S, curtainY, 44 * S, curtainH);
+
+        // Intricate vertical golden veil threads
+        ctx.strokeStyle = "rgba(255, 245, 215, 0.85)";
+        ctx.lineWidth = 1.2 * S;
+        for (let vx = -20 * S; vx <= 20 * S; vx += 5 * S) {
+          ctx.beginPath();
+          ctx.moveTo(vx, curtainY);
+          ctx.lineTo(vx + Math.sin(localT * 2 + vx) * 3 * S, curtainY + curtainH);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      // Draw Stations on Rings
+      [
+        { r: rMind, count: 7, baseColor: "#38bdf8", speed: 0.02 },
+        { r: rBody, count: 7, baseColor: "#f59e0b", speed: -0.015 },
+        { r: rSpirit, count: 7, baseColor: "#c084fc", speed: 0.012 }
+      ].forEach((octave, oIdx) => {
+        for (let i = 0; i < octave.count; i++) {
+          const isOriginal9 = (i === 0 || i === 1 || i === 4);
+          const stationAngle = (i / octave.count) * Math.PI * 2 + localT * octave.speed;
+          const sx = Math.cos(stationAngle) * octave.r;
+          const sy = Math.sin(stationAngle) * octave.r;
+
+          if (isOriginal9) {
+            // Original lights: always present, cast gold bezel
+            ctx.fillStyle = octave.baseColor;
+            ctx.beginPath();
+            ctx.arc(sx, sy, 7.5 * S, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.strokeStyle = createReflectiveGoldGradient(sx - 10 * S, sy - 10 * S, sx + 10 * S, sy + 10 * S, localT);
+            ctx.lineWidth = 2.4 * S;
+            ctx.beginPath();
+            ctx.arc(sx, sy, 10 * S, 0, Math.PI * 2);
+            ctx.stroke();
+            drawGlint(sx, sy, 18, 0.75);
+          } else {
+            // Crystallized post-veil stations (fade and spark into existence)
+            const crystalAlpha = Math.max(0, Math.min(1, (localT - 25 - i * 2) / 12));
+            if (crystalAlpha > 0) {
+              ctx.save();
+              ctx.globalAlpha = alpha * crystalAlpha;
+              ctx.fillStyle = "#fff8db";
+              ctx.beginPath();
+              ctx.arc(sx, sy, 6 * S, 0, Math.PI * 2);
+              ctx.fill();
+
+              ctx.strokeStyle = createReflectiveGoldGradient(sx - 8 * S, sy - 8 * S, sx + 8 * S, sy + 8 * S, localT);
+              ctx.lineWidth = 2 * S;
+              ctx.beginPath();
+              ctx.arc(sx, sy, 8 * S, 0, Math.PI * 2);
+              ctx.stroke();
+              drawGlint(sx, sy, 22, crystalAlpha);
+              ctx.restore();
+            }
+          }
+        }
+      });
+
+      // The Golden Center: The Choice
+      const choiceGlow = 0.8 + 0.2 * Math.sin(localT * 3);
+      ctx.fillStyle = createReflectiveGoldGradient(-20 * S, -20 * S, 20 * S, 20 * S, localT);
+      ctx.beginPath();
+      ctx.arc(0, 0, 20 * S, 0, Math.PI * 2);
+      ctx.fill();
+      drawGlint(0, 0, 40 * choiceGlow, 1.0);
+
+      ctx.restore();
+    }
+
+    // Ep 5 Shot 3: The Upward Law (Traffic Must Ascend to Conscious Mind)
+    function drawEp5Shot3(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy - 30 * S);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.74 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Central Vertical Conduit of Consciousness
+      const chW = 85 * S;
+      const chH = 430 * S;
+
+      ctx.strokeStyle = createReflectiveGoldGradient(-chW / 2, -chH / 2, chW / 2, chH / 2, localT);
+      ctx.lineWidth = 3.6 * S;
+      ctx.strokeRect(-chW / 2, -chH / 2, chW, chH);
+
+      // Three Depth Zones Labeling
+      [
+        { name: "CONSCIOUS (THOUGHT & PEN)", y: -chH / 2 + 45 * S, col: "rgba(255, 245, 215, 0.9)" },
+        { name: "SUBCONSCIOUS (REACH)", y: 0, col: "rgba(245, 158, 11, 0.9)" },
+        { name: "DEEP MIND (BLUEPRINT)", y: chH / 2 - 45 * S, col: "rgba(56, 189, 248, 0.9)" }
+      ].forEach(lvl => {
+        ctx.fillStyle = lvl.col;
+        ctx.font = "600 " + (11 * S) + "px 'Cinzel', serif";
+        ctx.textAlign = "center";
+        ctx.fillText(lvl.name, 0, lvl.y);
+      });
+
+      // Lawful Upward Current (Pulsing liquid gold rising from bottom to top)
+      const flowT = (localT * 1.6) % 3.0;
+      for (let i = 0; i < 5; i++) {
+        const ringProg = (flowT + i * 0.6) % 3.0;
+        const ry = (chH / 2 - 30 * S) - (ringProg / 3.0) * (chH - 60 * S);
+        const ringAlpha = Math.sin((ringProg / 3.0) * Math.PI);
+
+        ctx.strokeStyle = "rgba(255, 233, 168, " + (0.9 * ringAlpha) + ")";
+        ctx.lineWidth = 3 * S;
+        ctx.beginPath();
+        ctx.ellipse(0, ry, 30 * S, 8 * S, 0, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.fillStyle = "rgba(255, 255, 255, " + ringAlpha + ")";
+        ctx.beginPath();
+        ctx.arc(0, ry, 4.5 * S, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      clearGlow();
+      // Golden Apex Bloom at Top Chamber (Consciousness Throne)
+      ctx.fillStyle = createReflectiveGoldGradient(-35 * S, -chH / 2 - 25 * S, 35 * S, -chH / 2 + 25 * S, localT);
+      ctx.beginPath();
+      ctx.arc(0, -chH / 2, 28 * S, 0, Math.PI * 2);
+      ctx.fill();
+      drawGlint(0, -chH / 2, 36, 1.0);
+
+      // Attempted Rogue Shortcut (Direct jump from Deep Mind to Body/Spirit)
+      ctx.save();
+      const sx = chW / 2;
+      const sy = chH / 2 - 80 * S;
+      const endX = sx + 130 * S;
+      const endY = sy - 40 * S;
+
+      // Jagged erratic red-orange spark attempting shortcut
+      ctx.strokeStyle = "#f43f5e";
+      ctx.lineWidth = 2.4 * S;
+      ctx.beginPath();
+      ctx.moveTo(sx, sy);
+      ctx.lineTo(sx + 35 * S, sy + 10 * S);
+      ctx.lineTo(sx + 75 * S, sy - 15 * S);
+      ctx.lineTo(sx + 105 * S, sy - 5 * S);
+      ctx.stroke();
+
+      // Impermeable Golden Seal Barrier
+      ctx.strokeStyle = createReflectiveGoldGradient(endX - 22 * S, endY - 22 * S, endX + 22 * S, endY + 22 * S, localT);
+      ctx.lineWidth = 3.2 * S;
+      ctx.beginPath();
+      ctx.arc(endX, endY, 22 * S, 0, Math.PI * 2);
+      ctx.stroke();
+      drawGlint(endX, endY, 26, 0.85);
+
+      // Fracture sparks / smoke particles
+      for (let p = 0; p < 8; p++) {
+        const px = endX - 10 * S + Math.cos(p + localT * 3) * 25 * S;
+        const py = endY - 10 * S + Math.sin(p + localT * 3) * 25 * S;
+        ctx.fillStyle = "rgba(161, 161, 170, 0.6)";
+        ctx.beginPath();
+        ctx.arc(px, py, 2.5 * S, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+
       ctx.restore();
     }
+
+    // Ep 5 Shot 4: The Deep Mind Blueprint (The Inner Temple Master Plan)
+    function drawEp5Shot4(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.74 : 1.0;
+      ctx.scale(portraitScale, portraitScale * 0.75); // 3D Perspective tilt
+
+      // Blueprint Sacred Geometry Grid
+      const rMax = 270 * S;
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.25)";
+      ctx.lineWidth = 1.2 * S;
+
+      // Concentric guide circles
+      for (let r = 50 * S; r <= rMax; r += 55 * S) {
+        ctx.beginPath();
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // Radial angle spokes
+      for (let i = 0; i < 24; i++) {
+        const rad = (i / 24) * Math.PI * 2;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(Math.cos(rad) * rMax, Math.sin(rad) * rMax);
+        ctx.stroke();
+      }
+
+      // Three Heavy Cast Gold Track Rings
+      const rings = [
+        { r: 220 * S, color: "#38bdf8", label: "MIND OCTAVE" },
+        { r: 160 * S, color: "#f59e0b", label: "BODY OCTAVE" },
+        { r: 100 * S, color: "#c084fc", label: "SPIRIT OCTAVE" }
+      ];
+
+      rings.forEach((ring, idx) => {
+        ctx.strokeStyle = createReflectiveGoldGradient(-ring.r, -ring.r, ring.r, ring.r, localT + idx * 2);
+        ctx.lineWidth = 3.6 * S;
+        ctx.beginPath();
+        ctx.arc(0, 0, ring.r, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // 7 Station Pedestals per Ring
+        for (let s = 0; s < 7; s++) {
+          const sAngle = (s / 7) * Math.PI * 2 + localT * 0.02 * (idx === 1 ? -1 : 1);
+          const px = Math.cos(sAngle) * ring.r;
+          const py = Math.sin(sAngle) * ring.r;
+
+          // Pedestal Base
+          ctx.fillStyle = createReflectiveGoldGradient(px - 12 * S, py - 12 * S, px + 12 * S, py + 12 * S, localT);
+          ctx.beginPath();
+          ctx.arc(px, py, 11 * S, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Inset Gem
+          ctx.fillStyle = ring.color;
+          ctx.beginPath();
+          ctx.arc(px, py, 6 * S, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+
+      // Center Pedestal: The Choice
+      ctx.fillStyle = createReflectiveGoldGradient(-30 * S, -30 * S, 30 * S, 30 * S, localT);
+      ctx.beginPath();
+      ctx.arc(0, 0, 26 * S, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 2 * S;
+      ctx.stroke();
+      drawGlint(0, 0, 36, 1.0);
+
+      // Sweeping Compass Radar Beam
+      const sweepAngle = localT * 0.5;
+      const sweepGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, rMax);
+      sweepGrad.addColorStop(0, "rgba(255, 233, 168, 0.4)");
+      sweepGrad.addColorStop(1, "transparent");
+      ctx.fillStyle = sweepGrad;
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.arc(0, 0, rMax, sweepAngle - 0.25, sweepAngle + 0.25);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.restore();
+    }
+
+    // =========================================================================
+    // --- EPISODE 6: THE THREE OCTAVES AND THE CHOICE (Gilded Masterwork) ---
+    // =========================================================================
+
+    // Ep 6 Shot 1: The Body Ring (The Brass Gyroscope & Wisdom Ring)
+    function drawEp6Shot1(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.74 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Precession wobble (erratic early on, calmed by wisdom later)
+      const isStabilized = localT >= 32;
+      const wobble = isStabilized ? 0.02 : (0.28 * Math.sin(localT * 3.5));
+
+      ctx.save();
+      ctx.rotate(wobble);
+
+      // Heavy Cast Brass Outer Gimbal
+      const rOuter = 210 * S;
+      ctx.strokeStyle = createReflectiveGoldGradient(-rOuter, -rOuter, rOuter, rOuter, localT);
+      ctx.lineWidth = 5 * S;
+      ctx.beginPath();
+      ctx.arc(0, 0, rOuter, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Middle Gimbal Ring (Tilting on gimbal axis)
+      const rMid = 165 * S;
+      const tiltAngle = Math.sin(localT * 1.8) * 0.4;
+      ctx.save();
+      ctx.scale(1, Math.cos(tiltAngle));
+      ctx.strokeStyle = createReflectiveGoldGradient(-rMid, -rMid, rMid, rMid, localT * 1.4);
+      ctx.lineWidth = 4 * S;
+      ctx.beginPath();
+      ctx.arc(0, 0, rMid, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+
+      // Inner Spinning Flywheel (High speed gyroscopic spin)
+      const rFly = 120 * S;
+      const spin = localT * 8.0;
+      ctx.save();
+      ctx.rotate(spin);
+
+      // Flywheel Disc Rim
+      ctx.fillStyle = createReflectiveGoldGradient(-rFly, -rFly, rFly, rFly, localT * 2.0);
+      ctx.beginPath();
+      ctx.arc(0, 0, rFly, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Recessed Central Cavity
+      ctx.fillStyle = "#1e1304";
+      ctx.beginPath();
+      ctx.arc(0, 0, rFly * 0.75, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Radial Aerodynamic Spokes & Counterweights
+      ctx.strokeStyle = createReflectiveGoldGradient(-rFly, -rFly, rFly, rFly, localT);
+      ctx.lineWidth = 3.5 * S;
+      for (let s = 0; s < 6; s++) {
+        const rad = (s / 6) * Math.PI * 2;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(Math.cos(rad) * rFly, Math.sin(rad) * rFly);
+        ctx.stroke();
+        drawGlint(Math.cos(rad) * rFly * 0.85, Math.sin(rad) * rFly * 0.85, 14, 0.7);
+      }
+
+      ctx.restore(); // end spin
+      ctx.restore(); // end wobble
+
+      // The Steadying Golden Ring of Wisdom
+      if (localT >= 25) {
+        const wisdomAlpha = Math.min(1, (localT - 25) / 12);
+        const rWisdom = 260 * S;
+        ctx.save();
+        ctx.globalAlpha = alpha * wisdomAlpha;
+        ctx.strokeStyle = createReflectiveGoldGradient(-rWisdom, -rWisdom, rWisdom, rWisdom, localT * 0.8);
+        ctx.lineWidth = 6 * S;
+        ctx.beginPath();
+        ctx.arc(0, 0, rWisdom, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Contact point glints where wisdom embraces the gyroscope
+        drawGlint(-rWisdom, 0, 32, 1.0);
+        drawGlint(rWisdom, 0, 32, 1.0);
+        ctx.restore();
+      }
+
+      // Sinking Amber Itches from Mind absorbed into the wheel
+      for (let i = 0; i < 6; i++) {
+        const itchProg = (localT * 0.8 + i * 0.5) % 2.5;
+        const ix = (i - 2.5) * 45 * S;
+        const iy = -280 * S + (itchProg / 2.5) * 360 * S;
+        if (iy < 80 * S) {
+          ctx.fillStyle = "#f59e0b";
+          ctx.beginPath();
+          ctx.arc(ix, iy, 3.2 * S, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      ctx.restore();
+    }
+
+    // Ep 6 Shot 2: The Spirit Ring (Primeval Dark, Lightning & Twin Flames)
+    function drawEp6Shot2(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy - 25 * S);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.74 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      // Phase 1 (localT < 26): Absolute Primeval Dark & Silent Yearning
+      if (localT < 26) {
+        const yearnPulse = 0.5 + 0.5 * Math.sin(localT * 1.8);
+        ctx.fillStyle = "rgba(192, 132, 252, " + (0.45 + 0.45 * yearnPulse) + ")";
+        ctx.beginPath();
+        ctx.arc(0, 0, (6 + yearnPulse * 5) * S, 0, Math.PI * 2);
+        ctx.fill();
+        drawGlint(0, 0, 20 * yearnPulse, 0.8);
+      }
+
+      // Phase 2 (localT = 26 to 31): Sudden Celestial Lightning Strike (No white-out, rich contrast)
+      if (localT >= 26 && localT <= 31) {
+        const flashIntensity = Math.sin(((localT - 26) / 5) * Math.PI);
+
+        // Localized radial celestial bloom (preserving dark vellum depth)
+        const bloomGrad = ctx.createRadialGradient(0, 0, 10 * S, 0, 0, 480 * S);
+        bloomGrad.addColorStop(0, "rgba(255, 255, 255, " + (0.75 * flashIntensity) + ")");
+        bloomGrad.addColorStop(0.25, "rgba(216, 180, 254, " + (0.45 * flashIntensity) + ")");
+        bloomGrad.addColorStop(0.65, "rgba(147, 51, 234, " + (0.15 * flashIntensity) + ")");
+        bloomGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = bloomGrad;
+        ctx.beginPath();
+        ctx.arc(0, 0, 480 * S, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Main celestial trunk bolt
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 4.5 * S;
+        ctx.beginPath();
+        ctx.moveTo(0, -360 * S);
+        ctx.lineTo(-35 * S, -220 * S);
+        ctx.lineTo(30 * S, -110 * S);
+        ctx.lineTo(-20 * S, -30 * S);
+        ctx.lineTo(0, 0);
+        ctx.stroke();
+
+        ctx.strokeStyle = "#c084fc";
+        ctx.lineWidth = 7 * S;
+        ctx.stroke();
+
+        // Branching forks
+        ctx.strokeStyle = "rgba(192, 132, 252, 0.85)";
+        ctx.lineWidth = 2.4 * S;
+        ctx.beginPath();
+        ctx.moveTo(-35 * S, -220 * S);
+        ctx.lineTo(-95 * S, -170 * S);
+        ctx.lineTo(-125 * S, -190 * S);
+        ctx.moveTo(30 * S, -110 * S);
+        ctx.lineTo(90 * S, -75 * S);
+        ctx.lineTo(120 * S, -100 * S);
+        ctx.stroke();
+
+        drawGlint(0, 0, 48, 1.0);
+      }
+
+      // Phase 3 (localT > 30): The Forked Sacred Flames (Radiant Lotus vs Armored Citadel)
+      if (localT > 30) {
+        const flameAlpha = Math.min(1, (localT - 30) / 8);
+        ctx.save();
+        ctx.globalAlpha = alpha * flameAlpha;
+
+        // Central Carved Gold Tabernacle / Altar
+        ctx.fillStyle = createReflectiveGoldGradient(-130 * S, 60 * S, 130 * S, 105 * S, localT);
+        ctx.fillRect(-125 * S, 65 * S, 250 * S, 32 * S);
+        ctx.strokeRect(-125 * S, 65 * S, 250 * S, 32 * S);
+
+        // --- LEFT: Service to Others (Blooming Radiant Lotus Flame / Crown of Stars) ---
+        ctx.save();
+        ctx.translate(-85 * S, 25 * S);
+        const lBloom = 0.92 + 0.08 * Math.sin(localT * 4);
+        
+        // Golden Lotus Petals Pedestal
+        ctx.fillStyle = createReflectiveGoldGradient(-40 * S, 20 * S, 40 * S, 40 * S, localT);
+        ctx.beginPath();
+        ctx.ellipse(0, 35 * S, 40 * S, 12 * S, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // Living Radiant Fire Blossom
+        const lGrad = ctx.createRadialGradient(0, -15 * S, 6, 0, -15 * S, 60 * S);
+        lGrad.addColorStop(0, "#ffffff");
+        lGrad.addColorStop(0.3, "#ffe9a8");
+        lGrad.addColorStop(0.65, "#e8b64c");
+        lGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = lGrad;
+        ctx.beginPath();
+        ctx.arc(0, -15 * S, 58 * S * lBloom, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 7 Corona Stars
+        for (let st = 0; st < 7; st++) {
+          const sang = (st / 7) * Math.PI * 2 + localT * 0.4;
+          drawGlint(Math.cos(sang) * 52 * S, -15 * S + Math.sin(sang) * 52 * S, 15, 0.9);
+        }
+        ctx.restore();
+
+        // --- RIGHT: Service to Self (Armored Fortress Spire / Inward Needle) ---
+        ctx.save();
+        ctx.translate(85 * S, 25 * S);
+
+        // Fortress Base with Stone Battlements
+        ctx.fillStyle = createReflectiveGoldGradient(-35 * S, 15 * S, 35 * S, 40 * S, localT * 0.4);
+        ctx.fillRect(-32 * S, 20 * S, 64 * S, 20 * S);
+        ctx.strokeRect(-32 * S, 20 * S, 64 * S, 20 * S);
+
+        // Gothic Citadel Spire
+        ctx.fillStyle = createReflectiveGoldGradient(-24 * S, -80 * S, 24 * S, 20 * S, localT * 0.6);
+        ctx.beginPath();
+        ctx.moveTo(0, -90 * S);
+        ctx.lineTo(24 * S, 20 * S);
+        ctx.lineTo(-24 * S, 20 * S);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Sharp Inward Needle Flame
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.moveTo(0, -100 * S);
+        ctx.lineTo(5 * S, -55 * S);
+        ctx.lineTo(-5 * S, -55 * S);
+        ctx.closePath();
+        ctx.fill();
+        drawGlint(0, -100 * S, 24, 1.0);
+        ctx.restore();
+
+        ctx.restore();
+      }
+
+      ctx.restore();
+    }
+
+    // Ep 6 Shot 3: The Resonance (Harmonic Chord of Three Rings & Central Choice)
+    function drawEp6Shot3(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy);
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.74 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      const rMind = 250 * S;
+      const rBody = 180 * S;
+      const rSpirit = 110 * S;
+
+      // Draw the Three Rings Rotating at Harmonic Integer Ratios (1 : 2 : 3)
+      const octaves = [
+        { r: rMind, col: "#38bdf8", speed: 0.015, name: "Mind" },
+        { r: rBody, col: "#f59e0b", speed: 0.03, name: "Body" },
+        { r: rSpirit, col: "#c084fc", speed: 0.045, name: "Spirit" }
+      ];
+
+      octaves.forEach((oct, idx) => {
+        ctx.strokeStyle = createReflectiveGoldGradient(-oct.r, -oct.r, oct.r, oct.r, localT + idx);
+        ctx.lineWidth = 3.2 * S;
+        ctx.beginPath();
+        ctx.arc(0, 0, oct.r, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      // Harmonic Alignment Spokes (Pulsing chords connecting all 3 rings simultaneously)
+      const spokePulse = 0.5 + 0.5 * Math.sin(localT * 3);
+      ctx.strokeStyle = "rgba(255, 233, 168, " + (0.45 + 0.45 * spokePulse) + ")";
+      ctx.lineWidth = 2.4 * S;
+      for (let sp = 0; sp < 7; sp++) {
+        const rad = (sp / 7) * Math.PI * 2;
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(rad) * 40 * S, Math.sin(rad) * 40 * S);
+        ctx.lineTo(Math.cos(rad) * rMind, Math.sin(rad) * rMind);
+        ctx.stroke();
+      }
+
+      // Three Pens at Station 5 Turning Inward Toward Center
+      octaves.forEach((oct, idx) => {
+        const penStationAngle = (4 / 7) * Math.PI * 2 + localT * oct.speed;
+        const px = Math.cos(penStationAngle) * oct.r;
+        const py = Math.sin(penStationAngle) * oct.r;
+
+        ctx.save();
+        ctx.translate(px, py);
+        // Rotate pen nib directly inward toward (0,0)
+        const inAngle = Math.atan2(-py, -px);
+        ctx.rotate(inAngle);
+
+        // Miniature Gold Pen Embedded in Octave Heart
+        ctx.fillStyle = oct.col;
+        ctx.beginPath();
+        ctx.arc(0, 0, 8 * S, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = createReflectiveGoldGradient(-15 * S, -3 * S, 15 * S, 3 * S, localT);
+        ctx.lineWidth = 2.2 * S;
+        ctx.beginPath();
+        ctx.moveTo(-12 * S, 0);
+        ctx.lineTo(16 * S, 0); // Nib pointing inward
+        ctx.stroke();
+        drawGlint(16 * S, 0, 16, 0.9);
+
+        ctx.restore();
+      });
+
+      // The Central Golden Sun: The Choice
+      const choiceBeat = 1.0 + 0.12 * Math.sin(localT * 6.28);
+      const cGrad = ctx.createRadialGradient(0, 0, 5, 0, 0, 45 * S);
+      cGrad.addColorStop(0, "#ffffff");
+      cGrad.addColorStop(0.3, "#ffe9a8");
+      cGrad.addColorStop(0.7, "#e8b64c");
+      cGrad.addColorStop(1, "transparent");
+      ctx.fillStyle = cGrad;
+      ctx.beginPath();
+      ctx.arc(0, 0, 40 * S * choiceBeat, 0, Math.PI * 2);
+      ctx.fill();
+      drawGlint(0, 0, 50, 1.0);
+
+      ctx.restore();
+    }
+
+    // Ep 6 Shot 4: The Seal (The Complete Frontispiece Bookplate)
+    function drawEp6Shot4(localT, alpha) {
+      if (alpha <= 0.001) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(cx, cy - 35 * S); // Elevate to provide clean clearance for subtitles
+
+      const isPortrait = width < height;
+      const portraitScale = isPortrait ? 0.74 : 1.0;
+      ctx.scale(portraitScale, portraitScale);
+
+      const rSeal = 225 * S; // Refined radius for perfect proportional breathing space
+
+      // Heavy Cast Gold Outer Bezel
+      ctx.strokeStyle = createReflectiveGoldGradient(-rSeal, -rSeal, rSeal, rSeal, localT);
+      ctx.lineWidth = 5.5 * S;
+      ctx.beginPath();
+      ctx.arc(0, 0, rSeal, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Baroque Guilloche Ring
+      ctx.strokeStyle = "rgba(255, 233, 168, 0.7)";
+      ctx.lineWidth = 2 * S;
+      ctx.beginPath();
+      ctx.arc(0, 0, rSeal - 16 * S, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // 21 Set Jewels around rim (7 sapphire, 7 amber, 7 amethyst)
+      for (let j = 0; j < 21; j++) {
+        const jAng = (j / 21) * Math.PI * 2;
+        const jx = Math.cos(jAng) * (rSeal - 8 * S);
+        const jy = Math.sin(jAng) * (rSeal - 8 * S);
+        const jCol = j < 7 ? "#38bdf8" : (j < 14 ? "#f59e0b" : "#c084fc");
+        ctx.fillStyle = jCol;
+        ctx.beginPath();
+        ctx.arc(jx, jy, 4.2 * S, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Three Nested Filigree Rings inside
+      [155 * S, 115 * S, 75 * S].forEach(r => {
+        ctx.strokeStyle = "rgba(232, 182, 76, 0.55)";
+        ctx.lineWidth = 1.4 * S;
+        ctx.beginPath();
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      // The Living Heart with Rooted Pen at the Center
+      ctx.save();
+      const hScale = 0.46 * S;
+      ctx.scale(hScale, hScale);
+      ctx.drawImage(masterHeartImg, -masterHeartImg.width / 2, -masterHeartImg.height / 2);
+      ctx.restore();
+
+      // Continuous Living Ink Spiral flowing from the pen nib
+      ctx.strokeStyle = createReflectiveGoldGradient(-180 * S, -180 * S, 180 * S, 180 * S, localT * 1.5);
+      ctx.lineWidth = 2.4 * S;
+      ctx.beginPath();
+      for (let a = 0; a < Math.PI * 6; a += 0.1) {
+        const spiralR = 22 * S + a * 10 * S;
+        if (spiralR > rSeal - 25 * S) break;
+        const sx = Math.cos(a + localT * 0.2) * spiralR;
+        const sy = Math.sin(a + localT * 0.2) * spiralR;
+        if (a === 0) ctx.moveTo(sx, sy);
+        else ctx.lineTo(sx, sy);
+      }
+      ctx.stroke();
+
+      // Dynamic Specular Sweep across the Seal
+      const sheenAngle = localT * 0.6;
+      const sx = Math.cos(sheenAngle) * rSeal;
+      const sy = Math.sin(sheenAngle) * rSeal;
+      drawGlint(sx, sy, 32, 0.95);
+
+      ctx.restore();
+    }
+
+    function drawManuscriptPlaceholder(shot, localT, alpha) {
+      if (alpha <= 0.001) return;
+    }
+
 
     // --- Master Render Frame Function ---
     function renderFrameAt(t) {
       t = Math.max(0, Math.min(t, TOTAL_DURATION));
       ctx.clearRect(0, 0, width, height);
 
-      // Universal candlelight & drifting dust
       drawVellumBackground(t);
 
-      // Find current shot
       let curShotIdx = 0;
       for (let i = 0; i < SHOTS.length; i++) {
         if (t >= SHOTS[i].start && t < SHOTS[i].start + SHOTS[i].dur) {
@@ -1592,7 +3027,6 @@
       const curShot = SHOTS[curShotIdx];
       const localT = t - curShot.start;
 
-      // Cross-dissolve logic (2.5s dissolve)
       const DISSOLVE_TIME = 2.5;
       let prevShot = null;
       let prevAlpha = 0;
@@ -1606,12 +3040,45 @@
       }
 
       function renderShot(shot, shotLocalT, alpha) {
+        // Episode 0
         if (shot.id === "ep0_shot1") drawDescent(shotLocalT, alpha);
         else if (shot.id === "ep0_shot2") drawTwentyTwoLights(shotLocalT, alpha);
         else if (shot.id === "ep0_shot3") drawVeilFalls(shotLocalT, alpha);
         else if (shot.id === "ep0_shot4") drawSevenStationsMontage(shotLocalT, alpha);
         else if (shot.id === "ep0_shot5") drawThreeOctaves(shotLocalT, alpha);
         else if (shot.id === "ep0_shot6") drawHoldThePicture(shotLocalT, alpha);
+        // Episode 1
+        else if (shot.id === "ep1_shot1") drawEp1Shot1(shotLocalT, alpha);
+        else if (shot.id === "ep1_shot2") drawEp1Shot2(shotLocalT, alpha);
+        else if (shot.id === "ep1_shot3") drawEp1Shot3(shotLocalT, alpha);
+        else if (shot.id === "ep1_shot4") drawEp1Shot4(shotLocalT, alpha);
+        // Episode 2
+        else if (shot.id === "ep2_shot1") drawEp2Shot1(shotLocalT, alpha);
+        else if (shot.id === "ep2_shot2") drawEp2Shot2(shotLocalT, alpha);
+        else if (shot.id === "ep2_shot3") drawEp2Shot3(shotLocalT, alpha);
+        else if (shot.id === "ep2_shot4") drawEp2Shot4(shotLocalT, alpha);
+        else if (shot.id === "ep2_shot5") drawEp2Shot5(shotLocalT, alpha);
+        // Episode 3
+        else if (shot.id === "ep3_shot1") drawEp3Shot1(shotLocalT, alpha);
+        else if (shot.id === "ep3_shot2") drawEp3Shot2(shotLocalT, alpha);
+        else if (shot.id === "ep3_shot3") drawEp3Shot3(shotLocalT, alpha);
+        else if (shot.id === "ep3_shot4") drawEp3Shot4(shotLocalT, alpha);
+        // Episode 4
+        else if (shot.id === "ep4_shot1") drawEp4Shot1(shotLocalT, alpha);
+        else if (shot.id === "ep4_shot2") drawEp4Shot2(shotLocalT, alpha);
+        else if (shot.id === "ep4_shot3") drawEp4Shot3(shotLocalT, alpha);
+        else if (shot.id === "ep4_shot4") drawEp4Shot4(shotLocalT, alpha);
+        // Episode 5: The Veil and the Deep Mind
+        else if (shot.id === "ep5_shot1") drawEp5Shot1(shotLocalT, alpha);
+        else if (shot.id === "ep5_shot2") drawEp5Shot2(shotLocalT, alpha);
+        else if (shot.id === "ep5_shot3") drawEp5Shot3(shotLocalT, alpha);
+        else if (shot.id === "ep5_shot4") drawEp5Shot4(shotLocalT, alpha);
+        // Episode 6: The Three Octaves and the Choice
+        else if (shot.id === "ep6_shot1") drawEp6Shot1(shotLocalT, alpha);
+        else if (shot.id === "ep6_shot2") drawEp6Shot2(shotLocalT, alpha);
+        else if (shot.id === "ep6_shot3") drawEp6Shot3(shotLocalT, alpha);
+        else if (shot.id === "ep6_shot4") drawEp6Shot4(shotLocalT, alpha);
+        // Fallback
         else drawManuscriptPlaceholder(shot, shotLocalT, alpha);
       }
 
@@ -1620,13 +3087,13 @@
       }
       renderShot(curShot, localT, curAlpha);
 
-      // Update Header Badges
+      // Header Badges
       const epBadge = document.getElementById("episode-badge");
       const shotBadge = document.getElementById("shot-badge");
       if (epBadge) epBadge.textContent = curShot.epTitle;
       if (shotBadge) shotBadge.textContent = curShot.title;
 
-      // Update Subtitles
+      // Subtitles
       let activeVOText = "";
       if (curShot.vo) {
         for (let v = 0; v < curShot.vo.length; v++) {
@@ -1639,18 +3106,18 @@
       }
       const voElem = document.getElementById("vo-text");
       if (voElem) {
-        if (activeVOText && activeVOText !== voElem.textContent) {
-          voElem.textContent = activeVOText;
+        if (activeVOText) {
+          if (activeVOText !== voElem.textContent) {
+            voElem.textContent = activeVOText;
+          }
           voElem.classList.add("active");
-        } else if (!activeVOText && voElem.textContent) {
+        } else {
           voElem.classList.remove("active");
-          setTimeout(() => {
-            if (!voElem.classList.contains("active")) voElem.textContent = "";
-          }, 600);
+          voElem.textContent = "";
         }
       }
 
-      // Update UI Progress & Time
+      // UI Progress & Time
       const progressPct = (t / TOTAL_DURATION) * 100;
       const progElem = document.getElementById("timeline-progress");
       if (progElem) progElem.style.width = progressPct + "%";
@@ -1666,7 +3133,6 @@
           String(totM).padStart(2, "0") + ":" + String(totS).padStart(2, "0");
       }
 
-      // Update Audio
       updateAudio(t);
     }
 
@@ -1697,7 +3163,7 @@
     }
     requestAnimationFrame(tick);
 
-    // --- Controls & Event Listeners ---
+    // Controls
     const playPauseBtn = document.getElementById("play-pause-btn");
     const playIcon = document.getElementById("play-icon");
     const pauseIcon = document.getElementById("pause-icon");
@@ -1729,7 +3195,6 @@
       soundOffIcon.style.display = isMuted ? "block" : "none";
     });
 
-    // Timeline Scrubber
     const scrubber = document.getElementById("timeline-scrubber");
     scrubber.addEventListener("click", (e) => {
       const rect = scrubber.getBoundingClientRect();
@@ -1738,7 +3203,6 @@
       window.__frame(ratio * TOTAL_DURATION);
     });
 
-    // Build Episode Dots
     const dotsContainer = document.getElementById("episode-dots");
     EPISODES.forEach(ep => {
       const dot = document.createElement("div");
@@ -1747,7 +3211,6 @@
       dotsContainer.appendChild(dot);
     });
 
-    // Chapter Drawer Setup
     const drawer = document.getElementById("chapter-drawer");
     const drawerToggleBtn = document.getElementById("drawer-toggle-btn");
     const closeDrawerBtn = document.getElementById("close-drawer-btn");
@@ -1760,7 +3223,6 @@
       drawer.classList.remove("open");
     });
 
-    // Populate Drawer
     EPISODES.forEach(ep => {
       const epDiv = document.createElement("div");
       epDiv.className = "ep-group";
@@ -1786,7 +3248,6 @@
       drawerContent.appendChild(epDiv);
     });
 
-    // Begin / Replay Buttons
     const beginBtn = document.getElementById("begin-btn");
     const titleScreen = document.getElementById("title-screen");
     beginBtn.addEventListener("click", () => {
@@ -1808,7 +3269,6 @@
       updatePlayPauseIcon();
     });
 
-    // Initial render
     window.__frame(0);
   </script>
 </body>
